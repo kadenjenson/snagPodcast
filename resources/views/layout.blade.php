@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
-
     <head>
+      <title>@yield('title', 'Snagpodcast')</title>
 
-      <title>@yield('title', 'SnagPodcast')</title>
-
+      @include('includes.head')
     </head>
 
     <body>
+      <div class="main-app-containter">
+        <header class="app-header">
 
-      @yield('header')
-      
-      @yield('page')
+          @include('includes.header')
 
-      @yield('footer')
+        </header>
+        
+        <div class="app-page">
 
-    </body>
-    
+          @yield('page')
+
+        </div>
+
+        <footer class="app-footer">
+
+          @include('includes.footer')
+          
+        </footer>
+
+      </div>
+    </body> 
 </html>
