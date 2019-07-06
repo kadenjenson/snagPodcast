@@ -8,6 +8,7 @@
 
     <body>
       <div class="main-app-containter">
+        
         <header class="app-header">
 
           @include('includes.header')
@@ -23,7 +24,7 @@
         <footer class="app-footer">
 
           @include('includes.footer')
-          
+
         </footer>
 
       </div>

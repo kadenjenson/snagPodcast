@@ -13,6 +13,8 @@
 
 Route::get('/', 'PodcastController@index');
 
+Route::get('/episode/{id}', 'PodcastController@show');
+
 Route::get('/about', function () {
     return view('pages.about');
 });
@@ -20,5 +22,3 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('pages.contact');
 });
-
-Route::get('/episode/{id}', 'PodcastController@show');
