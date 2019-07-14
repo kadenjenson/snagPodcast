@@ -2,14 +2,14 @@
 
 @section('page')
 
-    <h2>{{ $episode['title'] }}</h2>
+    <h2>{{ $episode->title }}</h2>
 
     <audio controls>
-        <source src={{ $episode['audio_url'] }}>
+        <source src={{ $episode->audioURL }}>
     </audio>
 
     <div class="snagCast__card">
-        <p>{{ strip_tags($episode['description']) }}</p>
+        <p>{{ $episode->description }}</p>
     </div>
 
 @endsection

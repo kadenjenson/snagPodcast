@@ -21,59 +21,73 @@ class PodcastController extends Controller
 
         $url = "https://www.buzzsprout.com/api/{$buzzSproutID}/episodes.json";
         $client = new Client(['base_uri' => $url]);
-        $response = $client->request('GET', "?api_token={$apiToken}");
 
-        $episodes = json_decode($response->getBody()->getContents(), true);
-        // $episodes = $this->cleanResponse($episodes);
+        $responseArr = $client->request('GET', "?api_token={$apiToken}");
+        $responseObj = $this->cleanResponse(json_decode($responseArr->getBody()->getContents(), true));
 
-        echo '<pre>';
-        var_dump(print_r($episodes));
-        echo '</pre>';
-
-        return $episodes;
+        if ($responseObj->error === 'no')
+        {
+            // echo '<pre>';
+            // var_dump($responseObj->episodes);
+            // echo '</pre>';
+            return $responseObj->episodes;
+        }
+        else {
+            return view('pages.404');
+        }
     }
 
     public function cleanResponse($episodes)
     {
-        $cleanedResponse = array();
+        $response = (object)[
+            'episodes' => array(),
+            'error' => 'no'
+        ];
 
-        foreach ($episodes as $item) {
-            $desc = preg_replace('/(<!--(\s|\S)*?-->)|(<\/?(\s|\S)*?>)/', '', $item['description']);
-
-            array_push($cleanedResponse, (object)[
-                'id' => $item['id'],
-                'title' => $item['title'],
-                'audioURL' => $item['audio_url'],
-                'artURL' => $item['artwork_url'],
-                'description' => strip_tags($item['description']),
-                'tags' => $item['tags'],
-                'created' => strtotime('m-d-Y', $item['published_at']),
-            ]);
-
-            // echo '<pre>';
-            // var_dump(print_r(strip_tags($item['description'])), true);
-            // // var_dump(print_r($desc), true);
-            // // var_dump($item['description']);
-            // echo '</pre>';
+        if ($episodes && $episodes !== null)
+        {
+            $len = count($episodes);
+            for ($i = 0; $i < $len; $i++)
+            {
+                $item = $episodes[$i];
+                array_push($response->episodes, (object)[
+                    'id' => strval($item['id']),
+                    'episodeNum' => $item['episode_number'],
+                    'title' => $item['title'],
+                    'audioURL' => $item['audio_url'],
+                    'artURL' => $item['artwork_url'],
+                    'description' => strip_tags($item['description']),
+                    'summary' => $item['summary'],
+                    'artist' => $item['artist'],
+                    'tags' => $item['tags'],
+                    'published' => date('m/d/Y', strtotime($item['published_at']))
+                ]);
+            }
+        }
+        else {
+            $response->error = 'yes';
         }
 
-        return $cleanedResponse;
+        return $response;
     }
 
     public function show($episodeID)
     {
-        $episode = $this->getPodcast($episodeID);
+        $episode = $this->getPodcastByID($episodeID);
+        // echo '<pre>';
+        // var_dump($episode);
+        // echo '</pre>';
 
         return view('pages.show', compact('episode'));
     }
 
-    public function getPodcast($id)
+    public function getPodcastByID($id)
     {
         $episodes = $this->requestAllPodcasts();
 
         foreach ($episodes as $item)
         {
-            if ($item['id'] = $id)
+            if ($item->id === $id)
             {
                 return $item;
             }

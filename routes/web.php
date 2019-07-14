@@ -15,10 +15,17 @@ Route::get('/', 'PodcastController@index');
 
 Route::get('/episode/{id}', 'PodcastController@show');
 
-Route::get('/about', function () {
+Route::get('/about', function()
+{
     return view('pages.about');
 });
 
-Route::get('/contact', function () {
+Route::get('/contact', function()
+{
     return view('pages.contact');
+});
+
+Route::get('/404', function()
+{
+    return view('pages.404');
 });

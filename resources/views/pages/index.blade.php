@@ -7,7 +7,7 @@
 
         <div class="snagCast__card">
             <div class="snagCast__title">
-                <h3><a href={{ url('/episode/' . $item['id']) }}>{{ $item['title'] }}</a></h3>
+                <h3><a href={{ url('/episode/' . $item->id) }}>{{ $item->title }}</a></h3>
             </div>
         </div>
 
