@@ -11,11 +11,13 @@
 *,
 *::after,
 *::before {
+  height: auto;
+  width: auto;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
+  font-size: 15.5px;
   font-weight: 400;
 }
 
@@ -26,13 +28,75 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   -webkit-tap-highlight-color: transparent;
+  background-color: #FAFBFC;
+}
+
+.main-app-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-wrapper,
+.content-wrapper,
+.footer-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.content-wrapper .page {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  height: 100%;
+  width: 90%;
+  margin-top: 40px;
+}
+
+.content-wrapper .page .page-title {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  height: 120px;
+  width: 100%;
+}
+
+.content-wrapper .page .page-title h1 {
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.content-wrapper .page .card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  padding: 35px;
+  margin-bottom: 40px;
+  background-color: #FFFFFF;
+  border: 1px solid #E3E5E8;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(34, 54, 84, 0.1), 0 2px 4px rgba(34, 54, 84, 0.08), 0 -2px 6px rgba(34, 54, 84, 0.03);
 }
 
 .white * {
   color: #FFF;
 }
 
-.app-header {
+.error {
+  color: #e3342f;
+}
+
+.header-wrapper {
   position: relative;
   height: auto;
   width: auto;
@@ -48,7 +112,7 @@ body {
 .navbar * {
   font-family: "Work Sans", sans-serif;
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .navbar.top {
@@ -82,6 +146,7 @@ body {
   height: 100%;
   width: 100%;
   text-decoration: none;
+  letter-spacing: 0.5px;
 }
 
 .navTopCol.logo {
@@ -104,7 +169,7 @@ body {
 }
 
 .navTopCol.link .link-container::before {
-  transition: 400ms;
+  transition: 300ms;
   height: 3px;
   content: "";
   position: absolute;
@@ -151,7 +216,63 @@ body {
   background-repeat: no-repeat;
 }
 
-body {
-  background-color: lightgrey;
+.contact.page .contact-form {
+  width: 88%;
+}
+
+.contact.page .contact-form .row-items {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contact.page .contact-form .row-items .row {
+  width: 45%;
+}
+
+.contact.page .contact-form .row {
+  width: 100%;
+  margin: 15px 0;
+}
+
+.contact.page .contact-form .row label {
+  color: #747B87;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.contact.page .contact-form .row input[type=text],
+.contact.page .contact-form .row textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 6px 15px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #000000;
+  box-shadow: 0px 0px 0px 0px #000000;
+  opacity: 0.75;
+}
+
+.contact.page .contact-form .row input[type=text]:hover,
+.contact.page .contact-form .row textarea:hover {
+  transition: 200ms ease;
+  box-shadow: 0px 3px 0px 0px #000000;
+  opacity: 1;
+}
+
+.contact.page .contact-form .row input[type=text]:focus,
+.contact.page .contact-form .row textarea:focus {
+  transition: 200ms ease;
+  box-shadow: 0px 3px 0px 0px #000000;
+  opacity: 1;
+}
+
+.contact.page .contact-form .row .submit-btn {
+  height: 45px;
+  padding: 0 14px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: lightblue;
 }
 

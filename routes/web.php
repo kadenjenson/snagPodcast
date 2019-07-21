@@ -20,10 +20,8 @@ Route::get('/about', function()
     return view('pages.about');
 });
 
-Route::get('/contact', function()
-{
-    return view('pages.contact');
-});
+Route::get('/contact', 'ContactFormController@create');
+Route::post('/contact', 'ContactFormController@store');
 
 Route::get('/error', function()
 {

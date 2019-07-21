@@ -7,21 +7,21 @@
     </head>
 
     <body>
-      <div class="main-app-containter">
+      <div class="main-app-container">
         
-        <header class="app-header">
+        <header class="header-wrapper">
 
           @include('includes.header')
 
         </header>
         
-        <div class="app-page">
-
-          @yield('page')
-
+        <div class="content-wrapper">
+          <div class="@yield('page-class', 'page')">
+            @yield('page')
+          </div>
         </div>
 
-        <footer class="app-footer">
+        <footer class="footer-wrapper">
 
           @include('includes.footer')
 
