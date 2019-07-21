@@ -7,13 +7,13 @@
                 </a>
             </div>
         </div>
-        <div class="navTopCol white">
-            <div class="link {{Request::path() === 'about' ? 'active' : ''}}">
+        <div class="navTopCol white link">
+            <div class="link-container {{Request::path() === 'about' ? 'active' : ''}}">
                 <a href="/about">About</a>
             </div>
         </div>
-        <div class="navTopCol white">
-            <div class="link {{Request::path() === 'contact' ? 'active' : ''}}">
+        <div class="navTopCol white link">
+            <div class="link-container {{Request::path() === 'contact' ? 'active' : ''}}">
                 <a href="/contact">Contact</a>
             </div>
         </div>

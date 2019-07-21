@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     src: url('../../public/fonts/Roboto/Roboto-Black.ttf') format('truetype'),
          url('../../public/fonts/Roboto/Roboto-BlackItalic.ttf') format('truetype'),
          url('../../public/fonts/Roboto/Roboto-Bold.ttf') format('truetype'),
@@ -15,8 +15,10 @@
 }
 
 @font-face {
-    font-family: 'Oxygen';
-    src: url('../../public/fonts/Oxygen/Oxygen-Light.ttf') format('truetype'),
-         url('../../public/fonts/Oxygen/Oxygen-Regular.ttf') format('truetype'),
-         url('../../public/fonts/Oxygen/Oxygen-Bold.ttf') format('truetype');
+    font-family: 'Work Sans', sans-serif;
+    src: url('../../public/fonts/Work_Sans/WorkSans-Bold.ttf') format('truetype'),
+         url('../../public/fonts/Work_Sans/WorkSans-SemiBold.ttf') format('truetype'),
+         url('../../public/fonts/Work_Sans/WorkSans-Regular.ttf') format('truetype'),
+         url('../../public/fonts/Work_Sans/WorkSans-Medium.ttf') format('truetype'),
+         url('../../public/fonts/Work_Sans/WorkSans-Light.ttf') format('truetype');
 }
