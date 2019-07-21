@@ -1,7 +1,34 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import 'fonts';
 
 // Variables
 @import 'variables';
 
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+body {
+    overflow-x: hidden;
+    font-weight: normal;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.white * {
+    color: $white;
+}
+
+// Pages and Components
+@import 'header';
 @import 'home';

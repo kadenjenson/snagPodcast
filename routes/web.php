@@ -25,7 +25,7 @@ Route::get('/contact', function()
     return view('pages.contact');
 });
 
-Route::get('/404', function()
+Route::get('/error', function()
 {
     return view('pages.404');
 });

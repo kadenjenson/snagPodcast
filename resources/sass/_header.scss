@@ -1,0 +1,88 @@
+.app-header {
+    position: relative;
+    height: auto;
+    width: auto;
+}
+
+.navbar {
+    background-image: url(https://snagpodcast.com/wp-content/uploads/2019/03/background-2-cropped.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    & * {
+        font-family: 'Oxygen', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    &.top {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: flex-end;
+        height: 220px;
+        width: 100%;
+    }
+}
+
+.navTopRow {
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    height: auto;
+    width: 600px;
+    margin-bottom: 11px;
+}
+
+.navTopCol {
+    height: auto;
+    width: 30%;
+    margin: 0 0 0 15px;
+    text-align: center;
+
+    &:hover {
+        -webkit-transition: all 0.6s;
+        transition: all 0.6s;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    &.logo {
+        position: relative;
+        height: 160px;
+        width: 160px;
+        -webkit-box-shadow: 0px 0px 20px -8px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 0px 20px -8px rgba(0,0,0,1);
+        box-shadow: 0px 0px 20px -8px rgba(0,0,0,1);
+
+        &:hover {
+            height: 162px;
+            width: 162px;
+        }
+
+        &.active {
+            height: 162px;
+            width: 162px;
+        }
+
+        a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+        
+        img {
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}

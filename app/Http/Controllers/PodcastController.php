@@ -33,7 +33,7 @@ class PodcastController extends Controller
             return $responseObj->episodes;
         }
         else {
-            return view('pages.404');
+            return redirect()->route('error');
         }
     }
 
