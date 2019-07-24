@@ -33,7 +33,7 @@ class PodcastController extends Controller
             return $responseObj->episodes;
         }
         else {
-            return redirect()->route('error');
+            return redirect('error');
         }
     }
 

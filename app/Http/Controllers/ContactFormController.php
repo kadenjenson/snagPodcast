@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactFormMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactFormController extends Controller
 {
@@ -19,5 +21,9 @@ class ContactFormController extends Controller
             'email' => 'required|email',
             'message' => 'required'
         ]);
+
+        Mail::send(new ContactFormMail($data));
+
+        return redirect('thank_you');
     }
 }

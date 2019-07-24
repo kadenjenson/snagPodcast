@@ -23,7 +23,12 @@ Route::get('/about', function()
 Route::get('/contact', 'ContactFormController@create');
 Route::post('/contact', 'ContactFormController@store');
 
+Route::get('/thank_you', function()
+{
+    return view('contact.thank_you');
+});
+
 Route::get('/error', function()
 {
-    return view('pages.404');
+    return view('pages.error');
 });
