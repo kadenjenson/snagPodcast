@@ -1,0 +1,48 @@
+.index.page {
+
+    .snagCard {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        width: 100%;
+
+        & .img-container {
+            height: 250px;
+            width: 250px;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                height: 100%;
+                width: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
+        & .episode-info {
+            width: 70%;
+
+            & .title {
+                height: 50px;
+                width: 100%;
+
+                .episode-num {
+                    color: $lightGrey;
+                    font-family: 'Work Sans', sans-serif;
+                    font-size: 45px;
+                    font-weight: 800;
+                    opacity: 0.75;
+                }
+
+                a {
+                    font-size: 24px;
+                    font-weight: 700;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

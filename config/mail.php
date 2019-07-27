@@ -56,12 +56,12 @@ return [
     */
 
     'to' => [
-        'address' => 'snagpodcast@gmail.com',
+        'address' => env('MAIL_TO_ADDRESS'),
         'name' => ''
     ],
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'address' => env('MAIL_FROM_ADDRESS'),
         'name' => env('MAIL_FROM_NAME', ''),
     ],
 

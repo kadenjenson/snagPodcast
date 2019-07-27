@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'PodcastController@index');
-
 Route::get('/episode/{id}', 'PodcastController@show');
 
 Route::get('/about', function()
