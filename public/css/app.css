@@ -113,6 +113,9 @@ body {
 }
 
 .navbar {
+  position: relative;
+  height: auto;
+  width: 100%;
   background-image: url(/images/snagPodcast-banner.jpg?d7f9f0aad3de7b6c3f8abffc34b62259);
   background-position: center;
   background-repeat: no-repeat;
@@ -129,28 +132,35 @@ body {
   display: flex;
   align-items: center;
   align-content: center;
-  justify-content: flex-end;
-  height: 220px;
+  justify-content: flex-start;
+  height: 260px;
   width: 100%;
 }
 
 .navbar .banner {
   position: absolute;
-  bottom: -50%;
-  left: 50%;
-  height: 250px;
-  width: 600px;
-  padding: 20px;
+  right: 0;
+  left: 0;
+  bottom: -95px;
+  height: 160px;
+  width: 52%;
+  margin: 0 auto;
   background-color: #13005C;
+  display: flex;
+  align-items: center;
+  align-content: center;
 }
 
 .navbar .banner .text {
   color: #FFF;
-  font-size: 30px;
+  font-size: 38px;
+  text-align: center;
+  letter-spacing: 0.8px;
 }
 
 .navbar .banner span {
   color: #DD1369;
+  font-size: 38px;
 }
 
 .navTopRow {
@@ -159,15 +169,15 @@ body {
   align-items: center;
   align-content: center;
   justify-content: space-between;
-  height: auto;
-  width: 600px;
-  margin-bottom: 11px;
+  height: 200px;
+  width: 700px;
+  padding-left: 50px;
 }
 
 .navTopCol {
-  height: auto;
-  width: 30%;
-  margin: 0 0 0 15px;
+  position: relative;
+  height: 60px;
+  width: 100px;
   text-align: center;
 }
 
@@ -179,42 +189,35 @@ body {
 }
 
 .navTopCol.logo {
-  position: relative;
-  height: 180px;
-  width: 180px;
-  overflow: auto;
+  height: 160px;
+  width: 160px;
 }
 
-.navTopCol.link {
-  display: flex;
-  justify-content: center;
-}
-
-.navTopCol.link .link-container {
+.navTopCol .link-container {
   position: relative;
   height: 100%;
   width: auto;
   padding: 15px 0;
 }
 
-.navTopCol.link .link-container::before {
+.navTopCol .link-container::before {
   transition: 300ms;
   height: 3px;
   content: "";
   position: absolute;
   background-color: #FFF;
   width: 0%;
-  left: -10%;
+  left: -5%;
   bottom: 0;
   z-index: 5;
 }
 
-.navTopCol.link .link-container:hover::before {
-  width: 120%;
+.navTopCol .link-container:hover::before {
+  width: 110%;
 }
 
-.navTopCol.link .active::before {
-  width: 120%;
+.navTopCol .active::before {
+  width: 110%;
 }
 
 .logo-container {
@@ -222,20 +225,20 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 160px;
-  width: 160px;
+  height: 100%;
+  width: 100%;
   box-shadow: 0px 0px 20px -8px black;
   transition: width 0.3s, height 0.3s;
 }
 
 .logo-container:hover {
-  height: 163px;
-  width: 163px;
+  height: 102%;
+  width: 102%;
 }
 
 .logo-container.active {
-  height: 163px;
-  width: 163px;
+  height: 102%;
+  width: 102%;
 }
 
 .logo-container img {
