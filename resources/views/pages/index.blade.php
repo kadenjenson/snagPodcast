@@ -16,12 +16,12 @@
             </div>
             <div class="episode-info col">
                 <div class="title">
-                    <div class="episode-num"># {{ $item->episodeNum }}</div>
+                    <div class="episode-num"><i>S</i> {{ $item->season }} <i>E</i> {{ $item->episode }}</div>
                     <a href={{ url('/episode/' . $item->id) }}>{{ $item->title }}</a>
                 </div>
                 <div class="sub title">{{ $item->summary }}</div>
-                <div class="sub-title">{{ $item->artist }}</div>
-                <div class="sub-title">{{ $item->tags }}</div>
+                <div class="sub title">{{ $item->artist }}</div>
+                <div class="sub title">{{ $item->tags }}</div>
                 <div class="date">{{ $item->published }}</div>
             </div>
         </div>

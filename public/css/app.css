@@ -146,6 +146,8 @@ body {
   width: 52%;
   margin: 0 auto;
   background-color: #13005C;
+  border-radius: 4px;
+  box-shadow: 0px 0px 20px -8px black;
   display: flex;
   align-items: center;
   align-content: center;
@@ -250,7 +252,6 @@ body {
 
 .index.page .snagCard {
   justify-content: space-between;
-  flex-wrap: nowrap;
   width: 100%;
 }
 
@@ -280,12 +281,21 @@ body {
   width: 100%;
 }
 
+.index.page .snagCard .episode-info .title.sub {
+  height: auto;
+}
+
 .index.page .snagCard .episode-info .title .episode-num {
   color: #98A7B9;
   font-family: "Work Sans", sans-serif;
   font-size: 45px;
   font-weight: 800;
   opacity: 0.75;
+}
+
+.index.page .snagCard .episode-info .title .episode-num i {
+  font-size: 45px;
+  font-weight: 800;
 }
 
 .index.page .snagCard .episode-info .title a {

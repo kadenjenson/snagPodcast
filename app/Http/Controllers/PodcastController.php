@@ -52,7 +52,8 @@ class PodcastController extends Controller
                 $item = $episodes[$i];
                 array_push($response->episodes, (object)[
                     'id' => strval($item['id']),
-                    'episodeNum' => $item['episode_number'],
+                    'episode' => $item['episode_number'],
+                    'season' => $item['season_number'],
                     'title' => $item['title'],
                     'audioURL' => $item['audio_url'],
                     'artURL' => $item['artwork_url'],
