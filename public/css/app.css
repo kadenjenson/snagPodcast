@@ -113,7 +113,7 @@ body {
 }
 
 .navbar {
-  background-image: url(https://snagpodcast.com/wp-content/uploads/2019/03/background-2-cropped.png);
+  background-image: url(/images/snagPodcast-banner.jpg?d7f9f0aad3de7b6c3f8abffc34b62259);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -132,6 +132,25 @@ body {
   justify-content: flex-end;
   height: 220px;
   width: 100%;
+}
+
+.navbar .banner {
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  height: 250px;
+  width: 600px;
+  padding: 20px;
+  background-color: #13005C;
+}
+
+.navbar .banner .text {
+  color: #FFF;
+  font-size: 30px;
+}
+
+.navbar .banner span {
+  color: #DD1369;
 }
 
 .navTopRow {
