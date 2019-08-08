@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>@yield('title', 'Snagpodcast')</title>
+      <title>@yield('title', 'SnagPodcast')</title>
 
       @include('includes.head')
     </head>
@@ -16,6 +16,8 @@
         </header>
         
         <div class="content-wrapper">
+          @yield('page-header', '')
+
           <div class="@yield('page-class', 'page')">
             @yield('page')
           </div>

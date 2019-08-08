@@ -47,6 +47,7 @@ body {
 .content-wrapper {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     height: 100%;
 
     & .page {
@@ -74,6 +75,7 @@ body {
         }
 
         & .card {
+            position: relative;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
