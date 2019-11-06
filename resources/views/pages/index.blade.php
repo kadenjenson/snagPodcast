@@ -38,6 +38,7 @@
                 </div>
                 <div class="sub title">{{ $item->summary }}</div>
                 <div class="sub title">{{ $item->artist }}</div>
+                <div class="tag">this is a tag</div>
                 <div class="sub title">{{ $item->tags }}</div>
                 <div class="date">{{ $item->published }}</div>
             </div>

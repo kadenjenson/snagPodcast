@@ -325,6 +325,14 @@ body {
   text-decoration: none;
 }
 
+.index.page .snagCard .episode-info .tag {
+  position: relative;
+  width: auto;
+  padding: 8px;
+  background-color: #EA4695;
+  border-radius: 4px;
+}
+
 .contact.page .contact-form {
   width: 88%;
 }

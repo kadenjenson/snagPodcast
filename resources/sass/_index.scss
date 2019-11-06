@@ -69,6 +69,14 @@
                     text-decoration: none;
                 }
             }
+
+            & .tag {
+                position: relative;
+                width: auto;
+                padding: 8px;
+                background-color: #EA4695;
+                border-radius: 4px;
+            }
         }
     }
 }
