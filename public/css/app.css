@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "Roboto", sans-serif;
-  src: url(/fonts/Roboto-Black.ttf?3234b3e853eabe9fc936cd7a133055ad) format("truetype"), url(/fonts/Roboto-BlackItalic.ttf?18a576bf7ceb253929ac1f7bdfe6d467) format("truetype"), url(/fonts/Roboto-Bold.ttf?7c18188784f21915f42a5b3bc9d91e20) format("truetype"), url(/fonts/Roboto-BoldItalic.ttf?9098d3de14ef1cfae7be4f195fe1a174) format("truetype"), url(/fonts/Roboto-Medium.ttf?d52f011be65b281ba8ca1c3f689cf133) format("truetype"), url(/fonts/Roboto-MediumItalic.ttf?c1d8fbd29929d048c8d065d1be3bc35d) format("truetype"), url(/fonts/Roboto-Regular.ttf?18d44f79b3979ec168862093208c6d7d) format("truetype"), url(/fonts/Roboto-RegularItalic.ttf?9da6e8b1803fec548ee0720f620f93f5) format("truetype"), url(/fonts/Roboto-Light.ttf?c6cdfded4630ba6d9a2dceb70aa4fe0f) format("truetype"), url(/fonts/Roboto-LightItalic.ttf?afd48b813752d70b936e73d99b5dca35) format("truetype");
+  font-family: "Source Code Pro", monospace;
+  src: url(/fonts/SourceCodePro-LightItalic.ttf?ac76390ae8518be5c0a0bd1f3b088b4b) format("truetype"), url(/fonts/SourceCodePro-Light.ttf?a8d6f8bb989fc3c860ad2eeac21f9daa) format("truetype"), url(/fonts/SourceCodePro-Regular.ttf?b484b32fcec981a533e3b9694953103b) format("truetype"), url(/fonts/SourceCodePro-Italic.ttf?c088801620ae4d69924da74e879170a9) format("truetype"), url(/fonts/SourceCodePro-Medium.ttf?f621c504d70317ff13774e27d643ba21) format("truetype"), url(/fonts/SourceCodePro-MediumItalic.ttf?0b54cce890a75c2227718eaf473068ba) format("truetype"), url(/fonts/SourceCodePro-SemiBold.ttf?420d3580f5b6e63ba1eabb8555b5f6cf) format("truetype"), url(/fonts/SourceCodePro-Bold.ttf?03c11f6b0c0f707075d6483a78824c60) format("truetype"), url(/fonts/SourceCodePro-SemiBold.ttf?420d3580f5b6e63ba1eabb8555b5f6cf) format("truetype");
 }
 
 @font-face {
-  font-family: "Work Sans", sans-serif;
-  src: url(/fonts/WorkSans-Bold.ttf?1fed2d8028f8f5356cbecedb03427405) format("truetype"), url(/fonts/WorkSans-SemiBold.ttf?6f8da6d25c25d58ef3ec1c8b7c0e69c3) format("truetype"), url(/fonts/WorkSans-Regular.ttf?30be604d29fd477c201fb1d6e668eaeb) format("truetype"), url(/fonts/WorkSans-Medium.ttf?488b6f72b6183415e7a20aafa803a0c8) format("truetype"), url(/fonts/WorkSans-Light.ttf?f696fb4c6b331373967288debc9baaec) format("truetype");
+  font-family: "Muli", sans-serif;
+  src: url(/fonts/Muli-Light.ttf?d80af0828fe7e5236cb28e3bbcdf9e87) format("truetype"), url(/fonts/Muli-LightItalic.ttf?70c475e998d8e642b30de75a5784ec5f) format("truetype"), url(/fonts/Muli-Regular.ttf?e063a333cc9d58a3ad85d5cd86bf92d5) format("truetype"), url(/fonts/Muli-Italic.ttf?42ba31045765427e247a38c7e2c50e41) format("truetype"), url(/fonts/Muli-SemiBold.ttf?3217b2cde8e4451eb8a8572d39798598) format("truetype"), url(/fonts/Muli-SemiBoldItalic.ttf?17c1038fa865fea142dfd68676518105) format("truetype"), url(/fonts/Muli-Bold.ttf?44ea8275e878ed72a9c8a393f9de12d2) format("truetype");
 }
 
 *,
@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Muli", sans-serif;
   font-size: 15.5px;
   font-weight: 400;
 }
@@ -125,7 +125,7 @@ body {
 }
 
 .navbar * {
-  font-family: "Work Sans", sans-serif;
+  font-family: "Source Code Pro", monospace;
   font-size: 25px;
   font-weight: 600;
 }
@@ -308,7 +308,6 @@ body {
 
 .index.page .snagCard .episode-info .title .episode-num {
   color: #98A7B9;
-  font-family: "Work Sans", sans-serif;
   font-size: 45px;
   font-weight: 800;
   opacity: 0.75;

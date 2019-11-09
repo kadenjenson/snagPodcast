@@ -27,4 +27,4 @@
     * General: [Muli](https://fonts.google.com/specimen/Muli)
 1. Individual/Dedicated/All Pages
     * Header at top of page with blurred image.
-        * `rgba()`
+        * Overlay-color: `rgba()`
