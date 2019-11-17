@@ -7,7 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Muli', sans-serif;
-    font-size: 15.5px;
+    font-size: 15px;
     font-weight: 400;
 }
 
@@ -101,4 +101,12 @@ body {
     justify-content: flex-start;
     height: 100%;
     margin-right: 20px;
+
+    &.center {
+        justify-content: center;
+    }
+
+    &.right {
+        justify-content: flex-end;
+    }
 }

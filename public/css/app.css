@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Source Code Pro", monospace;
-  src: url(/fonts/SourceCodePro-LightItalic.ttf?ac76390ae8518be5c0a0bd1f3b088b4b) format("truetype"), url(/fonts/SourceCodePro-Light.ttf?a8d6f8bb989fc3c860ad2eeac21f9daa) format("truetype"), url(/fonts/SourceCodePro-Regular.ttf?b484b32fcec981a533e3b9694953103b) format("truetype"), url(/fonts/SourceCodePro-Italic.ttf?c088801620ae4d69924da74e879170a9) format("truetype"), url(/fonts/SourceCodePro-Medium.ttf?f621c504d70317ff13774e27d643ba21) format("truetype"), url(/fonts/SourceCodePro-MediumItalic.ttf?0b54cce890a75c2227718eaf473068ba) format("truetype"), url(/fonts/SourceCodePro-SemiBold.ttf?420d3580f5b6e63ba1eabb8555b5f6cf) format("truetype"), url(/fonts/SourceCodePro-Bold.ttf?03c11f6b0c0f707075d6483a78824c60) format("truetype"), url(/fonts/SourceCodePro-SemiBold.ttf?420d3580f5b6e63ba1eabb8555b5f6cf) format("truetype");
+  src: url(/fonts/SourceCodePro-LightItalic.ttf?ac76390ae8518be5c0a0bd1f3b088b4b) format("truetype"), url(/fonts/SourceCodePro-Light.ttf?a8d6f8bb989fc3c860ad2eeac21f9daa) format("truetype"), url(/fonts/SourceCodePro-Regular.ttf?b484b32fcec981a533e3b9694953103b) format("truetype"), url(/fonts/SourceCodePro-Italic.ttf?c088801620ae4d69924da74e879170a9) format("truetype"), url(/fonts/SourceCodePro-Medium.ttf?f621c504d70317ff13774e27d643ba21) format("truetype"), url(/fonts/SourceCodePro-MediumItalic.ttf?0b54cce890a75c2227718eaf473068ba) format("truetype"), url(/fonts/SourceCodePro-SemiBold.ttf?420d3580f5b6e63ba1eabb8555b5f6cf) format("truetype"), url(/fonts/SourceCodePro-Bold.ttf?03c11f6b0c0f707075d6483a78824c60) format("truetype"), url(/fonts/SourceCodePro-Black.ttf?efa63de0d44af1e7de9e01a4467dd423) format("truetype");
 }
 
 @font-face {
@@ -17,7 +17,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Muli", sans-serif;
-  font-size: 15.5px;
+  font-size: 15px;
   font-weight: 400;
 }
 
@@ -108,6 +108,14 @@ body {
   margin-right: 20px;
 }
 
+.col.center {
+  justify-content: center;
+}
+
+.col.right {
+  justify-content: flex-end;
+}
+
 .header-wrapper {
   position: relative;
   height: auto;
@@ -126,15 +134,14 @@ body {
 
 .navbar * {
   font-family: "Source Code Pro", monospace;
-  font-size: 25px;
-  font-weight: 600;
+  font-size: 35px;
+  font-weight: 700;
 }
 
 .navbar.top {
   display: flex;
-  align-items: center;
-  align-content: center;
   justify-content: flex-start;
+  align-content: center;
   height: 260px;
   width: 100%;
 }
@@ -164,11 +171,11 @@ body {
 }
 
 .navbar .banner span {
-  color: #DD1369;
+  color: #DD1269;
   font-size: 38px;
 }
 
-.navTopRow {
+.navRow {
   position: relative;
   display: flex;
   align-items: center;
@@ -179,50 +186,52 @@ body {
   padding-left: 50px;
 }
 
-.navTopCol {
+.navCol {
   position: relative;
-  height: 60px;
-  width: 100px;
+  height: 50px;
+  width: auto;
   text-align: center;
 }
 
-.navTopCol a {
-  height: 100%;
-  width: 100%;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-}
-
-.navTopCol.logo {
+.navCol.logo {
   height: 160px;
   width: 160px;
 }
 
-.navTopCol .link-container {
+.navCol .link-container {
   position: relative;
   height: 100%;
   width: auto;
-  padding: 15px 0;
 }
 
-.navTopCol .link-container::before {
-  transition: 300ms;
-  height: 3px;
+.navCol .link-container a {
+  height: 100%;
+  width: 100%;
+  transition: 300ms all ease;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.navCol .link-container::after {
   content: "";
   position: absolute;
-  background-color: #FFF;
+  z-index: 1;
+  height: 5px;
   width: 0%;
   left: -5%;
   bottom: 0;
-  z-index: 5;
+  transition: 300ms all ease;
+  background-color: #FFF;
 }
 
-.navTopCol .link-container:hover::before {
+.navCol .link-container:hover::after {
   width: 110%;
+  background-color: #DD1269;
 }
 
-.navTopCol .active::before {
+.navCol .link-container.active::after {
   width: 110%;
+  background-color: #DD1269;
 }
 
 .logo-container {
@@ -233,7 +242,7 @@ body {
   height: 100%;
   width: 100%;
   box-shadow: 0px 0px 20px -8px black;
-  transition: width 0.3s, height 0.3s;
+  transition: width 0.3s, height 0.3s ease;
 }
 
 .logo-container:hover {
@@ -251,6 +260,11 @@ body {
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.logo-container a {
+  height: 100%;
+  width: 100%;
 }
 
 .latest-episode {
