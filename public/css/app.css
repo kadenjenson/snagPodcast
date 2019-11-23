@@ -287,6 +287,14 @@ body {
   background-color: rgba(86, 86, 86, 0.6);
 }
 
+.index.page .tag {
+  position: relative;
+  width: auto;
+  padding: 8px;
+  background-color: #EA4695;
+  border-radius: 4px;
+}
+
 .index.page .snagCard {
   justify-content: space-between;
   width: 100%;
@@ -338,14 +346,6 @@ body {
   font-size: 24px;
   font-weight: 700;
   text-decoration: none;
-}
-
-.index.page .snagCard .episode-info .tag {
-  position: relative;
-  width: auto;
-  padding: 8px;
-  background-color: #EA4695;
-  border-radius: 4px;
 }
 
 .contact.page .contact-form {

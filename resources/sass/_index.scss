@@ -18,6 +18,14 @@
 
 .index.page {
 
+    .tag {
+        position: relative;
+        width: auto;
+        padding: 8px;
+        background-color: #EA4695;
+        border-radius: 4px;
+    }
+
     & .snagCard {
         justify-content: space-between;
         width: 100%;
@@ -67,14 +75,6 @@
                     font-weight: 700;
                     text-decoration: none;
                 }
-            }
-
-            & .tag {
-                position: relative;
-                width: auto;
-                padding: 8px;
-                background-color: #EA4695;
-                border-radius: 4px;
             }
         }
     }

@@ -4,24 +4,28 @@
 @section('page-class', 'index page')
 
 @section('page-header')
+
+    @php ($episode = $episodes[0])
     <div class="latest-episode">
         <div class="episode-info">
             <div class="title">
-                <div class="episode-num"><i>S</i> {{ $episodes['0']->season }} <i>E</i> {{ $episodes['0']->episode }}</div>
-                <a href={{ url('/episode/' . $episodes['0']->id) }}>{{ $episodes['0']->title }}</a>
+                <div class="episode-num"><i>S</i> {{ $episode->season }} <i>E</i> {{ $episode->episode }}</div>
+                <a href={{ url('/episode/' . $episode->id) }}>{{ $episode->title }}</a>
             </div>
-            <div class="sub title">{{ $episodes['0']->summary }}</div>
-            <div class="sub title">{{ $episodes['0']->artist }}</div>
-            {{-- <div class="sub title">{{ $episodes['0']->tags }}</div> --}}
-            <div class="date">{{ $episodes['0']->published }}</div>
+            <div class="sub title">{{ $episode->summary }}</div>
+            <div class="sub title">{{ $episode->artist }}</div>
+            @foreach ($episode->tags as $tag)
+                <div class="tag">{{ $tag }}</div>
+            @endforeach
+            <div class="date">{{ $episode->published }}</div>
         </div>
     </div>
 @endsection
 
 @section('page')
-    @foreach ($episodes as $item)
+    @foreach ($episodes as $i => $item)
 
-        @if ($item->episode === sizeof($episodes))
+        @if ($i === 0)
             @continue
         @endif
 

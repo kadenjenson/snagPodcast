@@ -33,7 +33,7 @@ class PodcastController extends Controller
             return $result->episodes;
         }
         else {
-            return redirect('error');
+            return redirect('error', compact('result'));
         }
     }
 
@@ -42,11 +42,12 @@ class PodcastController extends Controller
         $result = (object)[
             'episodes' => array(),
             'error' => 'no',
+            'status' => null,
             'message' => ''
         ];
 
-        $status = $response->getStatusCode();
-        if ($status !== 200)
+        $result->status = $response->getStatusCode();
+        if ($result->status !== 200)
         {
             $result->error = 'yes';
             $result->message = $response->getReasonPhrase();
@@ -54,9 +55,8 @@ class PodcastController extends Controller
         }
 
         $episodes = json_decode($response->getBody()->getContents(), true);
-        for ($i = 0, $len = sizeof($episodes); $i < $len; $i++)
+        foreach ($episodes as $item)
         {
-            $item = $episodes[$i];
             $tags = explode(', ', $item['tags']);
 
             array_push($result->episodes, (object)[
@@ -85,7 +85,6 @@ class PodcastController extends Controller
         // echo '<pre>';
         // var_dump($episode);
         // echo '</pre>';
-
         return view('pages.show', compact('episode'));
     }
 

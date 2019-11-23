@@ -16,9 +16,8 @@
         </header>
         
         <div class="content-wrapper">
-          @yield('page-header', '')
-
           <div class="@yield('page-class', 'page')">
+            @yield('page-header', '')
             @yield('page')
           </div>
         </div>
