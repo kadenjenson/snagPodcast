@@ -4,9 +4,7 @@
 @section('page-class', 'index page')
 
 @section('page-header')
-    <div class="latest-episode" style="background-image: url('{{ $episodes['0']->artURL }}')">
-        <div class="img-overlay"></div>
-    
+    <div class="latest-episode">
         <div class="episode-info">
             <div class="title">
                 <div class="episode-num"><i>S</i> {{ $episodes['0']->season }} <i>E</i> {{ $episodes['0']->episode }}</div>
@@ -14,7 +12,7 @@
             </div>
             <div class="sub title">{{ $episodes['0']->summary }}</div>
             <div class="sub title">{{ $episodes['0']->artist }}</div>
-            <div class="sub title">{{ $episodes['0']->tags }}</div>
+            {{-- <div class="sub title">{{ $episodes['0']->tags }}</div> --}}
             <div class="date">{{ $episodes['0']->published }}</div>
         </div>
     </div>
@@ -39,7 +37,7 @@
                 <div class="sub title">{{ $item->summary }}</div>
                 <div class="sub title">{{ $item->artist }}</div>
                 <div class="tag">this is a tag</div>
-                <div class="sub title">{{ $item->tags }}</div>
+                {{-- <div class="sub title">{{ $item->tags }}</div> --}}
                 <div class="date">{{ $item->published }}</div>
             </div>
         </div>

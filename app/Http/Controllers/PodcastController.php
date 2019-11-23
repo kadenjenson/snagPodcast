@@ -9,12 +9,12 @@ class PodcastController extends Controller
 {
     public function index()
     {
-        $episodes = $this->requestAllPodcasts();
+        $episodes = self::requestAllPodcasts();
         
         return view('pages.index', compact('episodes'));
     }
 
-    public function requestAllPodcasts()
+    private static function requestAllPodcasts()
     {
         $buzzSproutID = env('BUZZSPROUT_ID');
         $apiToken = env('BUZZSPROUT_API_TOKEN');
@@ -22,54 +22,61 @@ class PodcastController extends Controller
         $url = "https://www.buzzsprout.com/api/{$buzzSproutID}/episodes.json";
         $client = new Client(['base_uri' => $url]);
 
-        $responseArr = $client->request('GET', "?api_token={$apiToken}");
-        $responseObj = $this->cleanResponse(json_decode($responseArr->getBody()->getContents(), true));
+        $response = $client->request('GET', "?api_token={$apiToken}");
+        $result = self::cleanResponse($response);
 
-        if ($responseObj->error === 'no')
+        if ($result->error === 'no')
         {
             // echo '<pre>';
-            // var_dump($responseObj->episodes);
+            // var_dump($result->episodes);
             // echo '</pre>';
-            return $responseObj->episodes;
+            return $result->episodes;
         }
         else {
             return redirect('error');
         }
     }
 
-    public function cleanResponse($episodes)
+    private static function cleanResponse($response)
     {
-        $response = (object)[
+        $result = (object)[
             'episodes' => array(),
-            'error' => 'no'
+            'error' => 'no',
+            'message' => ''
         ];
 
-        if ($episodes && $episodes !== null)
+        $status = $response->getStatusCode();
+        if ($status !== 200)
         {
-            $len = count($episodes);
-            for ($i = 0; $i < $len; $i++)
-            {
-                $item = $episodes[$i];
-                array_push($response->episodes, (object)[
-                    'id' => strval($item['id']),
-                    'episode' => $item['episode_number'],
-                    'season' => $item['season_number'],
-                    'title' => $item['title'],
-                    'audioURL' => $item['audio_url'],
-                    'artURL' => $item['artwork_url'],
-                    'description' => strip_tags($item['description']),
-                    'summary' => $item['summary'],
-                    'artist' => $item['artist'],
-                    'tags' => $item['tags'],
-                    'published' => date('m/d/Y', strtotime($item['published_at']))
-                ]);
-            }
-        }
-        else {
-            $response->error = 'yes';
+            $result->error = 'yes';
+            $result->message = $response->getReasonPhrase();
+            return $result;
         }
 
-        return $response;
+        $episodes = json_decode($response->getBody()->getContents(), true);
+        for ($i = 0, $len = sizeof($episodes); $i < $len; $i++)
+        {
+            $item = $episodes[$i];
+            $tags = explode(', ', $item['tags']);
+
+            array_push($result->episodes, (object)[
+                'id' => intval($item['id']),
+                'episode' => $item['episode_number'],
+                'season' => $item['season_number'],
+                'title' => $item['title'],
+                'audioURL' => $item['audio_url'],
+                'artURL' => $item['artwork_url'],
+                'description' => strip_tags($item['description']),
+                'summary' => $item['summary'],
+                'artist' => $item['artist'],
+                'tags' => $tags,
+                'published' => date('m/d/Y', strtotime($item['published_at']))
+            ]);
+        }
+        // echo '<pre>';
+        // var_dump($result);
+        // echo '</pre>';
+        return $result;
     }
 
     public function show($episodeID)
@@ -82,10 +89,9 @@ class PodcastController extends Controller
         return view('pages.show', compact('episode'));
     }
 
-    public function getPodcastByID($id)
+    protected function getPodcastByID($id)
     {
-        $episodes = $this->requestAllPodcasts();
-
+        $episodes = self::requestAllPodcasts();
         foreach ($episodes as $item)
         {
             if ($item->id === $id)
