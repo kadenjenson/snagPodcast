@@ -1,27 +1,24 @@
 // Header & Sub-header font family.
 @font-face {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Alegreya Sans', sans-serif;
 
          // font-weight: 300;
-    src: url('../../public/fonts/Source_Code_Pro/SourceCodePro-LightItalic.ttf') format('truetype'),
-         url('../../public/fonts/Source_Code_Pro/SourceCodePro-Light.ttf') format('truetype'),
+    src: url('../../public/fonts/Alegreya_Sans/AlegreyaSans-LightItalic.ttf') format('truetype'),
+         url('../../public/fonts/Alegreya_Sans/AlegreyaSans-Light.ttf') format('truetype'),
 
          // font-weight: 400;
-         url('../../public/fonts/Source_Code_Pro/SourceCodePro-Regular.ttf') format('truetype'),
-         url('../../public/fonts/Source_Code_Pro/SourceCodePro-Italic.ttf') format('truetype'),
+         url('../../public/fonts/Alegreya_Sans/AlegreyaSans-Regular.ttf') format('truetype'),
+         url('../../public/fonts/Alegreya_Sans/AlegreyaSans-Italic.ttf') format('truetype'),
 
          // font-weight: 500;
-         url('../../public/fonts/Source_Code_Pro/SourceCodePro-Medium.ttf') format('truetype'),
-         url('../../public/fonts/Source_Code_Pro/SourceCodePro-MediumItalic.ttf') format('truetype'),
-
-         // font-weight: 600;
-         url('../../public/fonts/Source_Code_Pro/SourceCodePro-SemiBold.ttf') format('truetype'),
+         url('../../public/fonts/Alegreya_Sans/AlegreyaSans-Medium.ttf') format('truetype'),
+         url('../../public/fonts/Alegreya_Sans/AlegreyaSans-MediumItalic.ttf') format('truetype'),
 
          // font-weight: 700;
-         url('../../public/fonts/Source_Code_Pro/SourceCodePro-Bold.ttf') format('truetype'),
+         url('../../public/fonts/Alegreya_Sans/AlegreyaSans-Bold.ttf') format('truetype'),
 
-         // font-weight: 900;
-         url('../../public/fonts/Source_Code_Pro/SourceCodePro-Black.ttf') format('truetype');
+         // font-weight: 800;
+         url('../../public/fonts/Alegreya_Sans/AlegreyaSans-ExtraBold.ttf') format('truetype');
 }
 
 // General/Overall font styles

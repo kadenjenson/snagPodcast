@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Source Code Pro", monospace;
-  src: url(/fonts/SourceCodePro-LightItalic.ttf?ac76390ae8518be5c0a0bd1f3b088b4b) format("truetype"), url(/fonts/SourceCodePro-Light.ttf?a8d6f8bb989fc3c860ad2eeac21f9daa) format("truetype"), url(/fonts/SourceCodePro-Regular.ttf?b484b32fcec981a533e3b9694953103b) format("truetype"), url(/fonts/SourceCodePro-Italic.ttf?c088801620ae4d69924da74e879170a9) format("truetype"), url(/fonts/SourceCodePro-Medium.ttf?f621c504d70317ff13774e27d643ba21) format("truetype"), url(/fonts/SourceCodePro-MediumItalic.ttf?0b54cce890a75c2227718eaf473068ba) format("truetype"), url(/fonts/SourceCodePro-SemiBold.ttf?420d3580f5b6e63ba1eabb8555b5f6cf) format("truetype"), url(/fonts/SourceCodePro-Bold.ttf?03c11f6b0c0f707075d6483a78824c60) format("truetype"), url(/fonts/SourceCodePro-Black.ttf?efa63de0d44af1e7de9e01a4467dd423) format("truetype");
+  font-family: "Alegreya Sans", sans-serif;
+  src: url(/fonts/AlegreyaSans-LightItalic.ttf?7b6488dc9118e788b92c99285c208550) format("truetype"), url(/fonts/AlegreyaSans-Light.ttf?15a542eabd31a51063376540597638b3) format("truetype"), url(/fonts/AlegreyaSans-Regular.ttf?faa3c83d580611cb766fbedafddedf21) format("truetype"), url(/fonts/AlegreyaSans-Italic.ttf?fb1083e5dd19f9b1eb8983ffdcc9fb46) format("truetype"), url(/fonts/AlegreyaSans-Medium.ttf?5a3f02a790b8282ba62f83bf2afcd0f6) format("truetype"), url(/fonts/AlegreyaSans-MediumItalic.ttf?e10f682a050ee45fe335a248426c0124) format("truetype"), url(/fonts/AlegreyaSans-Bold.ttf?1e3960b45fa41b6383b8f34c181432d0) format("truetype"), url(/fonts/AlegreyaSans-ExtraBold.ttf?8d99c45d7a22b18a43383fc07e6d1c72) format("truetype");
 }
 
 @font-face {
@@ -17,7 +17,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Muli", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -122,6 +122,12 @@ body {
   width: auto;
 }
 
+.header-wrapper * {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+}
+
 .navbar {
   position: relative;
   height: auto;
@@ -130,12 +136,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.navbar * {
-  font-family: "Source Code Pro", monospace;
-  font-size: 35px;
-  font-weight: 700;
 }
 
 .navbar.top {

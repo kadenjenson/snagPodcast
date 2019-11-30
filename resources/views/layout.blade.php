@@ -10,9 +10,7 @@
       <div class="main-app-container">
         
         <header class="header-wrapper">
-
           @include('includes.header')
-
         </header>
         
         <div class="content-wrapper">
@@ -23,9 +21,7 @@
         </div>
 
         <footer class="footer-wrapper">
-
           @include('includes.footer')
-
         </footer>
 
       </div>
