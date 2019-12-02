@@ -11,6 +11,7 @@
 *,
 *::after,
 *::before {
+  position: relative;
   height: auto;
   width: auto;
   margin: 0;
@@ -21,7 +22,10 @@
   font-weight: 400;
 }
 
+html,
 body {
+  height: 100%;
+  width: 100vw;
   overflow-x: hidden;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
@@ -31,25 +35,26 @@ body {
   background-color: #FAFBFC;
 }
 
+.white,
 .white * {
   color: #FFF;
 }
 
-.error {
+.error,
+.error * {
   color: #e3342f;
 }
 
 .main-app-container {
-  position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-.header-wrapper,
+.nav-wrapper,
 .content-wrapper,
 .footer-wrapper {
-  position: relative;
-  width: 100%;
+  width: 100vw;
 }
 
 .content-wrapper {
@@ -60,32 +65,37 @@ body {
 }
 
 .content-wrapper .page {
-  position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-content: flex-start;
   height: 100%;
-  width: 90%;
-  margin-top: 40px;
+  width: 100vw;
 }
 
-.content-wrapper .page .page-title {
+.content-wrapper .page .header-container {
   display: flex;
-  align-items: center;
-  align-content: center;
-  height: 120px;
-  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 325px;
+  width: 100vw;
+  padding-left: 65px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.content-wrapper .page .page-title h1 {
-  font-size: 2em;
-  font-weight: 700;
+.content-wrapper .page .header-container .header-title {
+  font-family: "Alegreya Sans", sans-serif;
+  font-size: 35px;
+  font-weight: 800;
   letter-spacing: 0.8px;
 }
 
+.content-wrapper .page .header-container .header-subTitle {
+  margin-left: 5px;
+}
+
 .content-wrapper .page .card {
-  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -100,7 +110,6 @@ body {
 }
 
 .col {
-  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -116,20 +125,13 @@ body {
   justify-content: flex-end;
 }
 
-.header-wrapper {
-  position: relative;
-  height: auto;
-  width: auto;
-}
-
-.header-wrapper * {
+.nav-wrapper * {
   font-family: "Alegreya Sans", sans-serif;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 700;
 }
 
 .navbar {
-  position: relative;
   height: auto;
   width: 100%;
   background-image: url(/images/snagPodcast-banner.jpg?d7f9f0aad3de7b6c3f8abffc34b62259);
@@ -164,8 +166,7 @@ body {
 }
 
 .navbar .banner .text {
-  color: #FFF;
-  font-size: 38px;
+  font-size: 35px;
   text-align: center;
   letter-spacing: 0.8px;
 }
@@ -176,7 +177,6 @@ body {
 }
 
 .navRow {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -186,7 +186,6 @@ body {
 }
 
 .navCol {
-  position: relative;
   height: 50px;
   width: auto;
   text-align: center;
@@ -201,7 +200,6 @@ body {
 }
 
 .navCol .link-container {
-  position: relative;
   height: 100%;
   width: auto;
 }
@@ -269,26 +267,7 @@ body {
   width: 100%;
 }
 
-.latest-episode {
-  position: relative;
-  height: 850px;
-  width: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.latest-episode .img-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(86, 86, 86, 0.6);
-}
-
 .index.page .tag {
-  position: relative;
   width: auto;
   padding: 8px;
   background-color: #EA4695;

@@ -4,6 +4,9 @@
 ### Home Page
 1. Make most recent episode more of a card style. (Examples found on CodePen)
 1. Style tag buttons and relative pages.
+    * Click on one of the cards title to take you to the show page for that podcast episode.
+    * Show page will not have a header image like the rest of the other pages.
+    * Large text `font-size: 45px; font-weight: bold;`
 
 ### About Page
 1. No changes to current format on existing site.
@@ -23,7 +26,7 @@
 
 ### MISC./GLOBAL
 1. Fonts
-    * Header: [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro)
+    * Header: [Alegraya Sans](https://fonts.google.com/specimen/Alegreya+Sans)
     * General: [Muli](https://fonts.google.com/specimen/Muli)
 1. Individual/Dedicated/All Pages
     * Header at top of page with blurred image.

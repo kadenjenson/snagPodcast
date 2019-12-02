@@ -4,9 +4,9 @@
 @section('page-class', 'index page')
 
 @section('page-header')
-
     @php ($episode = $episodes[0])
-    <div class="latest-episode">
+
+    <div class="header-container">
         <div class="episode-info">
             <div class="title">
                 <div class="episode-num"><i>S</i> {{ $episode->season }} <i>E</i> {{ $episode->episode }}</div>
@@ -20,6 +20,7 @@
             <div class="date">{{ $episode->published }}</div>
         </div>
     </div>
+
 @endsection
 
 @section('page')

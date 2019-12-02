@@ -9,8 +9,8 @@
     <body>
       <div class="main-app-container">
         
-        <header class="header-wrapper">
-          @include('includes.header')
+        <header class="nav-wrapper">
+          @include('includes.navbar')
         </header>
         
         <div class="content-wrapper">

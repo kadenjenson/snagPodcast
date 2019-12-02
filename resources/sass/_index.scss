@@ -1,40 +1,21 @@
-.latest-episode {
-    position: relative;
-    height: 850px;
-    width: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    & .img-overlay {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: rgba(86, 86, 86, 0.6);
-    }
-}
-
 .index.page {
 
     .tag {
-        position: relative;
         width: auto;
         padding: 8px;
         background-color: #EA4695;
         border-radius: 4px;
     }
 
-    & .snagCard {
+    .snagCard {
         justify-content: space-between;
         width: 100%;
 
-        & .img-container {
+        .img-container {
             height: 250px;
             width: 250px;
 
-            & img {
+            img {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -47,10 +28,10 @@
             }
         }
 
-        & .episode-info {
+        .episode-info {
             width: 70%;
 
-            & .title {
+            .title {
                 height: 50px;
                 width: 100%;
 
@@ -58,7 +39,7 @@
                     height: auto;
                 }
 
-                & .episode-num {
+                .episode-num {
                     color: $lightGrey;
                     font-size: 45px;
                     font-weight: 800;

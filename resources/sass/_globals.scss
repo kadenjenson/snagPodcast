@@ -1,6 +1,7 @@
 *,
 *::after,
 *::before {
+    position: relative;
     height: auto;
     width: auto;
     margin: 0;
@@ -11,7 +12,10 @@
     font-weight: 400;
 }
 
+html,
 body {
+    height: 100%;
+    width: 100vw;
     overflow-x: hidden;
     font-weight: normal;
 
@@ -23,25 +27,26 @@ body {
     background-color: #FAFBFC;
 }
 
+.white,
 .white * {
     color: $white;
 }
 
-.error {
+.error,
+.error * {
     color: $red;
 }
 
 .main-app-container {
-    position: relative;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
-.header-wrapper,
+.nav-wrapper,
 .content-wrapper,
 .footer-wrapper {
-    position: relative;
-    width: 100%;
+    width: 100vw;
 }
 
 .content-wrapper {
@@ -50,32 +55,39 @@ body {
     flex-wrap: wrap;
     height: 100%;
 
-    & .page {
-        position: relative;
+    .page {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        align-content: flex-start;
         height: 100%;
-        width: 90%;
-        margin-top: 40px;
+        width: 100vw;
 
-        & .page-title {
+        .header-container {
             display: flex;
-            align-items: center;
-            align-content: center;
-            height: 120px;
-            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            height: 325px;
+            width: 100vw;
+            padding-left: 65px;
             
-            & h1 {
-                font-size: 2em;
-                font-weight: 700;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            .header-title {
+                font-family: 'Alegreya Sans', sans-serif;
+                font-size: 35px;
+                font-weight: 800;
                 letter-spacing: 0.8px;
+            }
+
+            .header-subTitle {
+                margin-left: 5px;
             }
         }
 
-        & .card {
-            position: relative;
+        .card {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -95,7 +107,6 @@ body {
 }
 
 .col {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
