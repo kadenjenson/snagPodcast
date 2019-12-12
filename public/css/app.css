@@ -91,13 +91,14 @@ body {
 
 .content-wrapper .page .header-container .titles .header-title {
   font-family: "Alegreya Sans", sans-serif;
-  font-size: 35px;
+  font-size: 40px;
   font-weight: 800;
   letter-spacing: 0.8px;
 }
 
 .content-wrapper .page .header-container .titles .header-subTitle {
   margin-left: 5px;
+  font-size: 16px;
 }
 
 .content-wrapper .page .header-container .overlay {
@@ -166,14 +167,15 @@ body {
   position: absolute;
   right: 0;
   left: 0;
-  bottom: -130px;
+  bottom: -110px;
   z-index: 1;
   display: flex;
   align-items: center;
   align-content: center;
-  height: 160px;
+  height: 140px;
   width: 740px;
   margin: 0 auto;
+  padding: 0 15px;
   background-color: #13005C;
   border-radius: 4px;
   box-shadow: 0px 0px 20px -8px black;

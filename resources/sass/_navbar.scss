@@ -24,16 +24,18 @@
         position: absolute;
         right: 0;
         left: 0;
-        bottom: -130px;
+        bottom: -110px;
         z-index: 1;
 
         display: flex;
         align-items: center;
         align-content: center;
 
-        height: 160px;
+        height: 140px;
         width: 740px;
         margin: 0 auto;
+        padding: 0 15px;
+
         background-color: #13005C;
         border-radius: 4px;
         -webkit-box-shadow: 0px 0px 20px -8px rgba(0,0,0,1);
