@@ -67,23 +67,38 @@ body {
             justify-content: center;
             align-items: flex-start;
 
-            height: 325px;
+            height: 420px;
             width: 100vw;
             padding-left: 65px;
             
-            background-position: center;
+            background-position: 50% 60%;
             background-repeat: no-repeat;
             background-size: cover;
 
-            .header-title {
-                font-family: 'Alegreya Sans', sans-serif;
-                font-size: 35px;
-                font-weight: 800;
-                letter-spacing: 0.8px;
+            .titles {
+                color: $white;
+                z-index: 1;
+
+                .header-title {
+                    font-family: 'Alegreya Sans', sans-serif;
+                    font-size: 35px;
+                    font-weight: 800;
+                    letter-spacing: 0.8px;
+                }
+
+                .header-subTitle {
+                    margin-left: 5px;
+                }
             }
 
-            .header-subTitle {
-                margin-left: 5px;
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                height: 100%;
+                width: 100%;
+                background-color: rgba(52, 153, 235, 0.7);
             }
         }
 

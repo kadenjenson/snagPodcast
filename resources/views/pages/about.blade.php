@@ -5,8 +5,11 @@
 
 @section('page-header')
     <div class="header-container">
-        <div class="header-title">About Us</div>
-        <div class="header-subTitle">Some light reading about your show hostesses.</div>
+        <div class="titles">
+            <div class="header-title">About Us</div>
+            <div class="header-subTitle">Some light reading about your hostesses behind the mic.</div>
+        </div>
+        <div class="overlay"></div>
     </div>
 @endsection
 

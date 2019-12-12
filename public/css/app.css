@@ -76,23 +76,37 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 325px;
+  height: 420px;
   width: 100vw;
   padding-left: 65px;
-  background-position: center;
+  background-position: 50% 60%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.content-wrapper .page .header-container .header-title {
+.content-wrapper .page .header-container .titles {
+  color: #FFF;
+  z-index: 1;
+}
+
+.content-wrapper .page .header-container .titles .header-title {
   font-family: "Alegreya Sans", sans-serif;
   font-size: 35px;
   font-weight: 800;
   letter-spacing: 0.8px;
 }
 
-.content-wrapper .page .header-container .header-subTitle {
+.content-wrapper .page .header-container .titles .header-subTitle {
   margin-left: 5px;
+}
+
+.content-wrapper .page .header-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(52, 153, 235, 0.7);
 }
 
 .content-wrapper .page .card {
@@ -325,6 +339,10 @@ body {
   font-size: 24px;
   font-weight: 700;
   text-decoration: none;
+}
+
+.about.page .header-container {
+  background-image: url(/images/about-banner.jpeg?58d57871d9996812e7ebf1f9bb66dde0);
 }
 
 .contact.page .contact-form {
