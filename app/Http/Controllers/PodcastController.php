@@ -57,9 +57,7 @@ class PodcastController extends Controller
         $episodes = json_decode($response->getBody()->getContents(), true);
         foreach ($episodes as $item)
         {
-            $tags = explode(', ', $item['tags']);
-
-            array_push($result->episodes, (object)[
+            array_push($result->episodes, (object) [
                 'id' => intval($item['id']),
                 'episode' => $item['episode_number'],
                 'season' => $item['season_number'],
@@ -69,7 +67,7 @@ class PodcastController extends Controller
                 'description' => strip_tags($item['description']),
                 'summary' => $item['summary'],
                 'artist' => $item['artist'],
-                'tags' => $tags,
+                'tags' => explode(', ', $item['tags']),
                 'published' => date('m/d/Y', strtotime($item['published_at']))
             ]);
         }
@@ -82,9 +80,6 @@ class PodcastController extends Controller
     public function show($episodeID)
     {
         $episode = $this->getPodcastByID($episodeID);
-        // echo '<pre>';
-        // var_dump($episode);
-        // echo '</pre>';
         return view('pages.show', compact('episode'));
     }
 

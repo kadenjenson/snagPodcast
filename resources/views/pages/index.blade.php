@@ -7,8 +7,12 @@
     @php ($episode = $episodes[0])
 
     <div class="header-container">
-        <div class="episode-info">
-            <div class="title">
+        <div class="latest-episode">
+            <audio id="audio-player" controls>
+                <source src={{ $episode->audioURL }}>
+            </audio>
+
+            {{-- <div class="title">
                 <div class="episode-num"><i>S</i> {{ $episode->season }} <i>E</i> {{ $episode->episode }}</div>
                 <a href={{ url('/episode/' . $episode->id) }}>{{ $episode->title }}</a>
             </div>
@@ -17,7 +21,7 @@
             @foreach ($episode->tags as $tag)
                 <div class="tag">{{ $tag }}</div>
             @endforeach
-            <div class="date">{{ $episode->published }}</div>
+            <div class="date">{{ $episode->published }}</div> --}}
         </div>
     </div>
 

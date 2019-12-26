@@ -1,5 +1,18 @@
 .index.page {
 
+    .header-container {
+
+        .latest-episode {
+            height: 80%;
+            width: 80%;
+
+            #audio-player {
+                height: 60px;
+                width: 300px;
+            }
+        }
+    }
+
     .tag {
         width: auto;
         padding: 8px;
