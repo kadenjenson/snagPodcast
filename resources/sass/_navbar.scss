@@ -5,7 +5,6 @@
 }
 
 .navbar {
-    height: auto;
     width: 100%;
     background-image: url('../images/assets/snagPodcast-banner.jpg');
     background-position: center;
@@ -17,7 +16,6 @@
         justify-content: flex-start;
         align-content: center;
         height: 145px;
-        width: 100%;
     }
 
     .banner {
@@ -48,7 +46,7 @@
             letter-spacing: 0.8px;
         }
 
-        & span {
+        span {
             color: #DD1269;
             font-size: 38px;
         }
@@ -60,13 +58,12 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    width: 750px;
-    padding-left: 50px;
+    width: 700px;
 }
 
 .navCol {
-    height: 50px;
-    width: auto;
+    height: 45px;
+    padding: 0 5px;
     text-align: center;
 
     &.logo {
@@ -74,86 +71,74 @@
         z-index: 1;
         height: 160px;
         width: 160px;
-        margin: 8px 0 0 8px;
+        
+        margin: 20px 0 0 20px;
+        padding: 0;
+    }
+
+    .logo-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+        height: 100%;
+        width: 100%;
+        -webkit-transition: 100ms all ease;
+        transition: 100ms all ease;
+        
+        -webkit-box-shadow: 0px 0px 20px -8px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 0px 20px -8px rgba(0,0,0,1);
+        box-shadow: 0px 0px 20px -8px rgba(0,0,0,1);
+        
+        img {
+            height: 100%;
+            width: 100%;
+            -webkit-transition: 100ms all ease;
+            transition: 100ms all ease;
+            
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        &:hover {
+            height: 101%;
+            width: 101%;
+        }
     }
 
     .link-container {
         height: 100%;
-        width: auto;
-
-        a {
-            height: 100%;
-            width: 100%;
-
-            -webkit-transition: 300ms all ease;
-            transition: 300ms all ease;
-
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
+        width: 100%;
 
         &::after {
             content: '';
             position: absolute;
             z-index: 1;
-            height: 5px;
-            width: 0%;
             left: -5%;
             bottom: 0;
-
-            -webkit-transition: 300ms all ease;
-            transition: 300ms all ease;
-
+            
+            height: 5px;
+            width: 0%;
             background-color: $white;
+
+            -webkit-transition: 200ms all ease;
+            transition: 200ms all ease;
         }
 
-        &:hover::after {
-            width: 110%;
-            background-color: #DD1269;
-        }
-
+        &:hover::after,
         &.active::after {
             width: 110%;
             background-color: #DD1269;
         }
     }
-}
-
-.logo-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    height: 100%;
-    width: 100%;
-    
-    -webkit-box-shadow: 0px 0px 20px -8px rgba(0,0,0,1);
-    -moz-box-shadow: 0px 0px 20px -8px rgba(0,0,0,1);
-    box-shadow: 0px 0px 20px -8px rgba(0,0,0,1);
-
-    -webkit-transition: width 0.3s, height 0.3s ease;
-    transition: width 0.3s, height 0.3s ease;
-
-    &:hover {
-        height: 102%;
-        width: 102%;
-    }
-
-    &.active {
-        height: 102%;
-        width: 102%;
-    }
-    
-    img {
-        height: 100%;
-        width: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
 
     a {
+        display: block;
         height: 100%;
         width: 100%;
+        text-decoration: none;
+        letter-spacing: 0.5px;
     }
 }

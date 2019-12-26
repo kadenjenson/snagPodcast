@@ -147,7 +147,6 @@ body {
 }
 
 .navbar {
-  height: auto;
   width: 100%;
   background-image: url(/images/snagPodcast-banner.jpg?d7f9f0aad3de7b6c3f8abffc34b62259);
   background-position: center;
@@ -160,7 +159,6 @@ body {
   justify-content: flex-start;
   align-content: center;
   height: 145px;
-  width: 100%;
 }
 
 .navbar .banner {
@@ -197,13 +195,12 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  width: 750px;
-  padding-left: 50px;
+  width: 700px;
 }
 
 .navCol {
-  height: 50px;
-  width: auto;
+  height: 45px;
+  padding: 0 5px;
   text-align: center;
 }
 
@@ -212,75 +209,63 @@ body {
   z-index: 1;
   height: 160px;
   width: 160px;
-  margin: 8px 0 0 8px;
+  margin: 20px 0 0 20px;
+  padding: 0;
 }
 
-.navCol .link-container {
-  height: 100%;
-  width: auto;
-}
-
-.navCol .link-container a {
-  height: 100%;
-  width: 100%;
-  transition: 300ms all ease;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-}
-
-.navCol .link-container::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  height: 5px;
-  width: 0%;
-  left: -5%;
-  bottom: 0;
-  transition: 300ms all ease;
-  background-color: #FFF;
-}
-
-.navCol .link-container:hover::after {
-  width: 110%;
-  background-color: #DD1269;
-}
-
-.navCol .link-container.active::after {
-  width: 110%;
-  background-color: #DD1269;
-}
-
-.logo-container {
+.navCol .logo-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 100%;
   width: 100%;
+  transition: 100ms all ease;
   box-shadow: 0px 0px 20px -8px black;
-  transition: width 0.3s, height 0.3s ease;
 }
 
-.logo-container:hover {
-  height: 102%;
-  width: 102%;
-}
-
-.logo-container.active {
-  height: 102%;
-  width: 102%;
-}
-
-.logo-container img {
+.navCol .logo-container img {
   height: 100%;
   width: 100%;
+  transition: 100ms all ease;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.logo-container a {
+.navCol .logo-container:hover {
+  height: 101%;
+  width: 101%;
+}
+
+.navCol .link-container {
   height: 100%;
   width: 100%;
+}
+
+.navCol .link-container::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: -5%;
+  bottom: 0;
+  height: 5px;
+  width: 0%;
+  background-color: #FFF;
+  transition: 200ms all ease;
+}
+
+.navCol .link-container:hover::after,
+.navCol .link-container.active::after {
+  width: 110%;
+  background-color: #DD1269;
+}
+
+.navCol a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  letter-spacing: 0.5px;
 }
 
 .index.page .tag {
