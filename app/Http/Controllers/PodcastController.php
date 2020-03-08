@@ -62,8 +62,8 @@ class PodcastController extends Controller
                 'episode' => $item['episode_number'],
                 'season' => $item['season_number'],
                 'title' => $item['title'],
-                'audioURL' => $item['audio_url'],
-                'artURL' => $item['artwork_url'],
+                'audioUrl' => $item['audio_url'],
+                'artUrl' => $item['artwork_url'],
                 'description' => strip_tags($item['description']),
                 'summary' => $item['summary'],
                 'artist' => $item['artist'],
@@ -71,9 +71,7 @@ class PodcastController extends Controller
                 'published' => date('m/d/Y', strtotime($item['published_at']))
             ]);
         }
-        // echo '<pre>';
-        // var_dump($result);
-        // echo '</pre>';
+        
         return $result;
     }
 

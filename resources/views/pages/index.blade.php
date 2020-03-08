@@ -8,11 +8,11 @@
 
     <div class="header-container">
         <div class="latest-episode">
-            <audio id="audio-player" controls>
-                <source src={{ $episode->audioURL }}>
-            </audio>
+            {{-- <audio id="audio-player" controls>
+                <source src={{ $episode->audioUrl }}>
+            </audio> --}}
 
-            {{-- <div class="title">
+            <div class="title">
                 <div class="episode-num"><i>S</i> {{ $episode->season }} <i>E</i> {{ $episode->episode }}</div>
                 <a href={{ url('/episode/' . $episode->id) }}>{{ $episode->title }}</a>
             </div>
@@ -21,7 +21,7 @@
             @foreach ($episode->tags as $tag)
                 <div class="tag">{{ $tag }}</div>
             @endforeach
-            <div class="date">{{ $episode->published }}</div> --}}
+            <div class="date">{{ $episode->published }}</div>
         </div>
     </div>
 
@@ -36,7 +36,7 @@
 
         <div class="snagCard card">
             <div class="img-container col">
-                <img src="{{ $item->artURL }}" alt="SnagPodcast Epsiode {{ $item->episode }}">
+                <img src="{{ $item->artUrl }}" alt="SnagPodcast Epsiode {{ $item->episode }}">
             </div>
             <div class="episode-info col">
                 <div class="title">
