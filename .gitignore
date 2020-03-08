@@ -1,12 +1,23 @@
+
+# folders
 /node_modules
 /public/hot
 /public/storage
-/storage/*.key
 /vendor
+/tests
+
+# secrets
 .env
 .env.example
+/storage/*.key
+
+# debugging
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+
+# misc.
+.styleci.yml
+.editorconfig
