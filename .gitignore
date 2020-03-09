@@ -19,5 +19,6 @@ npm-debug.log
 yarn-error.log
 
 # misc.
+**/*.DS_Store
 .styleci.yml
 .editorconfig
