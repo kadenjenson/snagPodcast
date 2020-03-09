@@ -1,10 +1,10 @@
 
 # folders
-/node_modules
-/public/hot
-/public/storage
-/vendor
-/tests
+/node_modules/
+/public/hot/
+/public/storage/
+/vendor/
+/tests/
 
 # secrets
 .env
