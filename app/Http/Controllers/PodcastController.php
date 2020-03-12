@@ -10,20 +10,36 @@ class PodcastController extends Controller
     public function index()
     {
         $episodes = self::requestAllPodcasts();
-        
+
         return view('pages.index', compact('episodes'));
     }
 
     private static function requestAllPodcasts()
     {
-        $buzzSproutID = env('BUZZSPROUT_ID');
+        $buzzID = env('BUZZSPROUT_ID');
         $apiToken = env('BUZZSPROUT_API_TOKEN');
 
-        $url = "https://www.buzzsprout.com/api/{$buzzSproutID}/episodes.json";
-        $client = new Client(['base_uri' => $url]);
+        $url = "https://www.buzzsprout.com/api/{$buzzID}/episodes.json";
+        $client = new Client();
 
-        $response = $client->request('GET', "?api_token={$apiToken}");
-        $result = self::cleanResponse($response);
+        // $response = $client->request('GET', "?api_token={$apiToken}");
+        // $result = self::cleanResponse($response);
+
+        $request = $client->createRequest("GET", "https://www.buzzsprout.com/api/{$buzzID}/episodes.json");
+        $response = $client->get('http://httpbin.org/get',
+        [
+            'headers' => ['Authorization' => 'Token token={$apiToken}']
+        ]);
+
+        echo '<pre>';
+        var_dump($response->getHeaders());
+        echo '</pre>';
+        die;
+
+        // $request->setHeader('Authorization', ['Token', "token={$apiToken}"]);
+
+        // $response = $client->send($request);
+        // $headers = $response->getHeaders();
 
         if ($result->error === 'no')
         {
@@ -71,7 +87,7 @@ class PodcastController extends Controller
                 'published' => date('m/d/Y', strtotime($item['published_at']))
             ]);
         }
-        
+
         return $result;
     }
 
