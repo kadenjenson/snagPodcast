@@ -4,7 +4,6 @@
 /public/hot/
 /public/storage/
 /vendor/
-/tests/
 
 # secrets
 .env
@@ -22,3 +21,4 @@ yarn-error.log
 **/*.DS_Store
 .styleci.yml
 .editorconfig
+.idea/
