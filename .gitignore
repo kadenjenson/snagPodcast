@@ -1,13 +1,12 @@
 
 # folders
-/node_modules/
-/public/hot/
-/public/storage/
-/vendor/
+/node_modules
+/public/hot
+/public/storage
+/vendor
 
 # secrets
 .env
-.env.example
 /storage/*.key
 
 # debugging
@@ -19,6 +18,5 @@ yarn-error.log
 
 # misc.
 **/*.DS_Store
-.styleci.yml
 .editorconfig
 .idea/
