@@ -31,3 +31,5 @@
 1. Individual/Dedicated/All Pages
     * Header at top of page with blurred image.
         * Overlay-color: `rgba()`
+
+
