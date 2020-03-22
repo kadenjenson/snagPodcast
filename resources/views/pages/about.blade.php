@@ -1,6 +1,6 @@
-@extends('layout')
+@extends('index')
 
-@section('title', 'Snag Podcast About')
+@section('title', 'Snag Podcast - About')
 @section('page-class', 'about page')
 
 @section('page-header')

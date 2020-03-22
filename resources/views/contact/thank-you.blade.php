@@ -1,5 +1,5 @@
 @extends('index')
 
 @section('page')
-    <h1>This is a 404 page!</h1>
+    <h1>Thank you!</h1>
 @endsection
