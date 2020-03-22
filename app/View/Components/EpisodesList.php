@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Home extends Component
+class EpisodesList extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class Home extends Component
      */
     public function render()
     {
-        return view('components.home');
+        return view('components.episodes-list');
     }
 }
