@@ -1,0 +1,407 @@
+@font-face {
+    font-family: "Alegreya Sans", sans-serif;
+    src: url(../fonts/Alegreya_Sans/AlegreyaSans-LightItalic.ttf) format("truetype"), url(../fonts/Alegreya_Sans/AlegreyaSans-Light.ttf) format("truetype"), url(../fonts/Alegreya_Sans/AlegreyaSans-Regular.ttf) format("truetype"), url(../fonts/Alegreya_Sans/AlegreyaSans-Italic.ttf) format("truetype"), url(../fonts/Alegreya_Sans/AlegreyaSans-Medium.ttf) format("truetype"), url(../fonts/Alegreya_Sans/AlegreyaSans-MediumItalic.ttf) format("truetype"), url(../fonts/Alegreya_Sans/AlegreyaSans-Bold.ttf) format("truetype"), url(../fonts/Alegreya_Sans/AlegreyaSans-ExtraBold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Muli", sans-serif;
+    src: url(../fonts/Muli/Muli-Light.ttf) format("truetype"), url(../fonts/Muli/Muli-LightItalic.ttf) format("truetype"), url(../fonts/Muli/Muli-Regular.ttf) format("truetype"), url(../fonts/Muli/Muli-Italic.ttf) format("truetype"), url(../fonts/Muli/Muli-SemiBold.ttf) format("truetype"), url(../fonts/Muli/Muli-SemiBoldItalic.ttf) format("truetype"), url(../fonts/Muli/Muli-Bold.ttf) format("truetype");
+}
+
+*,
+*::after,
+*::before {
+    position: relative;
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Muli", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+    background-color: #FAFBFC;
+}
+
+.white,
+.white * {
+    color: #FFF;
+}
+
+.error,
+.error * {
+    color: #e3342f;
+}
+
+.main-app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.nav-wrapper,
+.content-wrapper,
+.footer-wrapper {
+    width: 100vw;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.content-wrapper .page {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100vw;
+    padding: 420px 50px 0 50px;
+}
+
+.content-wrapper .page .header-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 420px;
+    width: 100%;
+    background-position: 50% 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content-wrapper .page .header-container .titles {
+    color: #FFF;
+    z-index: 1;
+}
+
+.content-wrapper .page .header-container .titles .header-title {
+    font-family: "Alegreya Sans", sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.content-wrapper .page .header-container .titles .header-subTitle {
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.content-wrapper .page .header-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(52, 153, 235, 0.7);
+}
+
+.content-wrapper .page .card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    height: auto;
+    padding: 35px;
+    margin-bottom: 40px;
+    background-color: #FFFFFF;
+    border: 1px solid #E3E5E8;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(34, 54, 84, 0.1), 0 2px 4px rgba(34, 54, 84, 0.08), 0 -2px 6px rgba(34, 54, 84, 0.03);
+}
+
+.col {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.col.center {
+    justify-content: center;
+}
+
+.col.right {
+    justify-content: flex-end;
+}
+
+.nav-wrapper * {
+    font-family: "Alegreya Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navbar {
+    width: 100%;
+    background-image: url(../images/snagPodcast-banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar.top {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    height: 145px;
+}
+
+.navbar .banner {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -110px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: 140px;
+    width: 740px;
+    margin: 0 auto;
+    padding: 0 15px;
+    background-color: #13005C;
+    border-radius: 4px;
+    box-shadow: 0 0 20px -8px #000000;
+}
+
+.navbar .banner .text {
+    font-size: 35px;
+    text-align: center;
+    letter-spacing: 0.8px;
+}
+
+.navbar .banner span {
+    color: #DD1269;
+    font-size: 38px;
+}
+
+.navRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 700px;
+}
+
+.navCol {
+    height: 45px;
+    padding: 0 5px;
+    text-align: center;
+}
+
+.navCol.logo {
+    align-self: flex-start;
+    z-index: 1;
+    height: 160px;
+    width: 160px;
+    margin: 20px 0 0 20px;
+    padding: 0;
+}
+
+.navCol .logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    transition: 100ms all ease;
+    box-shadow: 0 0 20px -8px black;
+}
+
+.navCol .logo-container img {
+    height: 100%;
+    width: 100%;
+    transition: 100ms all ease;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.navCol .logo-container:hover {
+    height: 101%;
+    width: 101%;
+}
+
+.navCol .link-container {
+    height: 100%;
+    width: 100%;
+}
+
+.navCol .link-container::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: -5%;
+    bottom: 0;
+    height: 5px;
+    width: 0%;
+    background-color: #FFF;
+    transition: 200ms all ease;
+}
+
+.navCol .link-container:hover::after,
+.navCol .link-container.active::after {
+    width: 110%;
+    background-color: #DD1269;
+}
+
+.navCol a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.index.page .header-container .latest-episode {
+    height: 80%;
+    width: 80%;
+}
+
+.index.page .header-container .latest-episode #audio-player {
+    height: 60px;
+    width: 300px;
+}
+
+.index.page .tag {
+    width: auto;
+    padding: 8px;
+    background-color: #EA4695;
+    border-radius: 4px;
+}
+
+.index.page .snagCard {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.index.page .snagCard .img-container {
+    height: 250px;
+    width: 250px;
+}
+
+.index.page .snagCard .img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.index.page .snagCard .episode-info {
+    width: 70%;
+}
+
+.index.page .snagCard .episode-info .title {
+    height: 50px;
+    width: 100%;
+}
+
+.index.page .snagCard .episode-info .title.sub {
+    height: auto;
+}
+
+.index.page .snagCard .episode-info .title .episode-num {
+    color: #98A7B9;
+    font-size: 45px;
+    font-weight: 800;
+    opacity: 0.75;
+}
+
+.index.page .snagCard .episode-info .title .episode-num i {
+    font-size: 45px;
+    font-weight: 800;
+}
+
+.index.page .snagCard .episode-info .title a {
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.about.page .header-container {
+    background-image: url(../images/about-banner.jpeg);
+}
+
+.contact.page .contact-form {
+    width: 88%;
+}
+
+.contact.page .contact-form .row-items {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact.page .contact-form .row-items .row {
+    width: 45%;
+}
+
+.contact.page .contact-form .row {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.contact.page .contact-form .row label {
+    color: #747B87;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contact.page .contact-form .row input[type=text],
+.contact.page .contact-form .row textarea {
+    width: 100%;
+    margin: 8px 0;
+    padding: 6px 15px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000000;
+    box-shadow: 0 0 0 0 #000000;
+    opacity: 0.75;
+}
+
+.contact.page .contact-form .row input[type=text]:hover,
+.contact.page .contact-form .row textarea:hover {
+    transition: 200ms ease;
+    box-shadow: 0 3px 0 0 #000000;
+    opacity: 1;
+}
+
+.contact.page .contact-form .row input[type=text]:focus,
+.contact.page .contact-form .row textarea:focus {
+    transition: 200ms ease;
+    box-shadow: 0 3px 0 0 #000000;
+    opacity: 1;
+}
+
+.contact.page .contact-form .row .submit-btn {
+    height: 45px;
+    padding: 0 14px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: lightblue;
+}
