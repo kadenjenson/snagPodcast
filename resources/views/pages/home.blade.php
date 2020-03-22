@@ -13,7 +13,7 @@
 
 @endsection
 
-@section('page')
+@section('page-content')
     <h1>This is the page content.</h1>
 {{--    @foreach ($episodes as $i => $item)--}}
 

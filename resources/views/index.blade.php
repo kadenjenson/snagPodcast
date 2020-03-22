@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, intial-scale=1">
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <title>@yield('title', 'Snag Podcast')</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+
+        <link rel="stylesheet" href="css/app.css">
     </head>
 
     <body>
@@ -19,7 +21,7 @@
             <div class="content-wrapper">
                 <div class="@yield('page-class', 'page')">
                     @yield('page-header', '')
-                    @yield('page')
+                    @yield('page-content')
                 </div>
             </div>
 

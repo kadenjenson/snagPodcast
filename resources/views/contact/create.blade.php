@@ -3,7 +3,7 @@
 @section('title', 'Snag Podcast - Contact')
 @section('page-class', 'contact page')
 
-@section('page')
+@section('page-content')
     <div class="page-title">
         <h1>Contact Us!</h1>
     </div>

@@ -1,6 +1,6 @@
 @extends('index')
 
-@section('page')
+@section('page-content')
 
     {{-- <h2>{{ $episode->title }}</h2>
 
