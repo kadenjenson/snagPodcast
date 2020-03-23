@@ -12,17 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
 // CUSTOM ROUTES
-// Route::get('/', 'PodcastController@index');
 // Route::get('/episode/{id}', 'PodcastController@show');
-Route::get('/', function()
-{
-	return view('pages.home');
-});
+Route::get('/', 'PodcastController@getAllEpisodes');
 
 Route::get('/about', function()
 {
