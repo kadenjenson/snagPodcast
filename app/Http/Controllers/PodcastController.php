@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
 /**
@@ -35,12 +36,28 @@ class PodcastController extends Controller
         $type = "Token";
         $token = "token={$this->podApiToken}";
 
-        $response = Http::withToken(
-            $token,
-            $type
-        )->get("https://www.buzzsprout.com/api/{$this->podID}/episodes.json");
+        $response = Http::withHeaders([
+            "Authorization" => "Token token={$this->podApiToken}",
+            "Cache-Control" => "max-age=604800000, public",
+            "If-None-Match" => "",
+            "If-Modified-Since" => ""
+        ])->get("https://www.buzzsprout.com/api/{$this->podID}/episodes.json");
 
-        dd($response->headers(), $response->cookies(), $response->json());
+        if($response->successful())
+        {
+            $status = $response->status();
+            if($status == "304 Not Modified" || $status == 304)
+            {
+                dd('No new episodes have been uploaded to BuzzSprout.');
+            }
+            else {
+                dd($response->headers(), $response->json());
+            }
+            $this->checkETag($response->headers()["ETag"][0]);
+        }
+        else {
+            dd('couldn\'t get podcast episodes from BuzzSprout.');
+        }
     }
 
     /**
@@ -51,7 +68,8 @@ class PodcastController extends Controller
      */
 	protected function checkETag($eTag)
 	{
-	    return null;
+	    dd($eTag);
+//	    return null;
 	}
 
     /**
