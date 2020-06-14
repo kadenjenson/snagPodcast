@@ -24,53 +24,98 @@ class PodcastController extends Controller
         $this->podID = env('BUZZ_SPROUT_ID');
         $this->podApiToken = env('BUZZ_SPROUT_API_TOKEN');
     }
+    
+    public function index()
+    {
+    	return $this->getEpisodes();
+    }
 
     /**
      * sets up and executes our request.
      *
      * @param null|string $episodeID
-     * @return void
+     * @return array
      */
-    protected function handleRequest($episodeID = null)
+    protected function getEpisodes($episodeID = null)
     {
-        $type = "Token";
-        $token = "token={$this->podApiToken}";
+        $cachedETag = Cache::get('ETag', '');
+        $lastModified = Cache::get('LastModified', '');
 
         $response = Http::withHeaders([
             "Authorization" => "Token token={$this->podApiToken}",
-            "Cache-Control" => "max-age=604800000, public",
             "If-None-Match" => "",
             "If-Modified-Since" => ""
         ])->get("https://www.buzzsprout.com/api/{$this->podID}/episodes.json");
-
-        if($response->successful())
+        
+        $this->handleHeaders($response->headers());
+        $result = $this->handleResponse($response);
+        if(sizeof($result))
         {
-            $status = $response->status();
-            if($status == "304 Not Modified" || $status == 304)
-            {
-                dd('No new episodes have been uploaded to BuzzSprout.');
-            }
-            else {
-                dd($response->headers(), $response->json());
-            }
-            $this->checkETag($response->headers()["ETag"][0]);
+        	// redirect user to error page if no episodes are returned from response, or not found in the cache.
+	        dd($response->headers(), $cachedETag, $lastModified, $result);
         }
-        else {
-            dd('couldn\'t get podcast episodes from BuzzSprout.');
-        }
+	    return $result;
     }
-
-    /**
-     * check when the source was last modified.
-     *
-     * @param string $eTag
-     * @return null|array
-     */
-	protected function checkETag($eTag)
-	{
-	    dd($eTag);
-//	    return null;
-	}
+    
+    protected function handleHeaders($headers)
+    {
+    	if(sizeof($headers))
+	    {
+		    if(sizeof($headers['ETag']))
+		    {
+			    Cache::put('ETag', $headers['ETag'][0]);
+		    }
+		
+		    if(sizeof($headers['Last-Modified']))
+		    {
+			    Cache::put('LastModified', $headers['Last-Modified'][0]);
+		    }
+	    }
+    }
+    
+    protected function handleResponse($response)
+    {
+    	$status = $response->status();
+	    if($status == "304 Not Modified" || $status == 304)
+	    {
+	    	var_dump('cached episodes');
+		    return Cache::get('latestEpisodes', array());
+	    }
+	    elseif($status >= 400 || $status >= 305)
+	    {
+	    	return "Problem when trying to get episodes from BuzzSprout. Error code: {$status}";
+	    }
+	    else {
+	    	var_dump('got latest episodes and cleaned them up.');
+	    	$episodes = $this->cleanEpisodes($response->json());
+	    	
+	    	Cache::put('latestEpisodes', $episodes);
+	    	return $episodes;
+	    }
+    }
+    
+    protected function cleanEpisodes($episodes)
+    {
+    	$cleanedEpisodes = array();
+	    foreach($episodes as $episode)
+	    {
+		    array_push($cleanedEpisodes, (object)[
+			    'id' => intval($episode['id']),
+			    'episodeNum' => $episode['episode_number'],
+			    'seasonNum' => $episode['season_number'],
+			    'published' => date('m/d/Y', strtotime($episode['published_at'])),
+			    'title' => $episode['title'],
+			    'description' => strip_tags($episode['description']),
+			    'summary' => $episode['summary'],
+			    'artist' => $episode['artist'],
+			    'tags' => explode(", ", $episode['tags']),
+			    'audioUrl' => $episode['audio_url'],
+			    'artworkUrl' => $episode['artwork_url']
+		    ]);
+	    }
+    	
+    	return $cleanedEpisodes;
+    }
 
     /**
      * checks when the resource head was last modified.

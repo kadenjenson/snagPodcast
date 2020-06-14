@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // CUSTOM ROUTES
-Route::get('/', 'PodcastController@getAllEpisodes');
+Route::get('/', 'PodcastController@index');
 // Route::get('/episode/{id}', 'PodcastController@show');
 
 Route::get('/about', function()
