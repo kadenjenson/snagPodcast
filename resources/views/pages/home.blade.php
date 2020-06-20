@@ -3,19 +3,20 @@
 @section('page-class', 'index page')
 
 @section('page-header')
-{{--    @php ($episode = $episodes[0])--}}
+    @php ($episode = $episodes[array_key_first($episodes)])
 
     <div class="header-container">
         <div class="latest-episode">
-            <h1>This is the page's header.</h1>
+            <h1>This is the latest episode: {{ $episode->title }}</h1>
         </div>
     </div>
-
 @endsection
 
 @section('page-content')
     <h1>This is the page content.</h1>
-{{--    @foreach ($episodes as $i => $item)--}}
+    @foreach ($episodes as $i => $item)
+        <div>{{ $i }}</div>
+        <div>{{ $item->title }}</div>
 
 {{--        @if ($i === 0)--}}
 {{--            @continue--}}
@@ -33,10 +34,10 @@
 {{--                <div class="sub title">{{ $item->summary }}</div>--}}
 {{--                <div class="sub title">{{ $item->artist }}</div>--}}
 {{--                <div class="tag">this is a tag</div>--}}
-{{--                --}}{{-- <div class="sub title">{{ $item->tags }}</div> --}}
+{{--                 <div class="sub title">{{ $item->tags }}</div> --}}
 {{--                <div class="date">{{ $item->published }}</div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
 
-{{--    @endforeach--}}
+    @endforeach
 @endsection

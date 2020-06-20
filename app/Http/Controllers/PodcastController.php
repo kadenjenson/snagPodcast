@@ -27,32 +27,61 @@ class PodcastController extends Controller
     
     public function index()
     {
-    	return $this->getEpisodes();
+    	$episodes = $this->getEpisodes();
+    	
+    	return view('pages.home', compact('episodes'));
     }
+    
+    public function show($episodeID)
+    {
+    	$episode = $this->getEpisodeByID($episodeID);
+    	
+    	return view('pages.show', compact('episode'));
+    }
+	
+	/**
+	 * gets episode from cache. If none are stored then send request to get them.
+	 *
+	 * @param int $id
+	 * @return object
+	 */
+	public function getEpisodeByID($id)
+	{
+		$cachedEpisodes = Cache::get('latestEpisodes', array());
+		
+		$episode = $cachedEpisodes[$id];
+		if(sizeof($cachedEpisodes) && $episode)
+		{
+			return $episode;
+		}
+		else {
+			$result = $this->getEpisodes();
+			if(isset($result[$id]))
+			{
+				return $result[$id];
+			}
+			return redirect('error', "Looks like we have a 'snag' of our own and can't find that episode! Please refresh the page to try again.");
+		}
+	}
 
     /**
-     * sets up and executes our request.
-     *
-     * @param null|string $episodeID
-     * @return array
+     * gets array of episodes from BuzzSprout or cache.
      */
-    protected function getEpisodes($episodeID = null)
+    protected function getEpisodes()
     {
-        $cachedETag = Cache::get('ETag', '');
-        $lastModified = Cache::get('LastModified', '');
-
         $response = Http::withHeaders([
             "Authorization" => "Token token={$this->podApiToken}",
-            "If-None-Match" => "",
-            "If-Modified-Since" => ""
+            "If-None-Match" => Cache::get('ETag', ''),
+            "If-Modified-Since" => Cache::get('LastModified', '')
         ])->get("https://www.buzzsprout.com/api/{$this->podID}/episodes.json");
         
         $this->handleHeaders($response->headers());
+        
         $result = $this->handleResponse($response);
-        if(sizeof($result))
+        if(!sizeof($result) || !is_array($result))
         {
         	// redirect user to error page if no episodes are returned from response, or not found in the cache.
-	        dd($response->headers(), $cachedETag, $lastModified, $result);
+	        return redirect('error', compact('result'));
         }
 	    return $result;
     }
@@ -78,15 +107,13 @@ class PodcastController extends Controller
     	$status = $response->status();
 	    if($status == "304 Not Modified" || $status == 304)
 	    {
-	    	var_dump('cached episodes');
 		    return Cache::get('latestEpisodes', array());
 	    }
 	    elseif($status >= 400 || $status >= 305)
 	    {
-	    	return "Problem when trying to get episodes from BuzzSprout. Error code: {$status}";
+	    	return $status;
 	    }
 	    else {
-	    	var_dump('got latest episodes and cleaned them up.');
 	    	$episodes = $this->cleanEpisodes($response->json());
 	    	
 	    	Cache::put('latestEpisodes', $episodes);
@@ -99,8 +126,9 @@ class PodcastController extends Controller
     	$cleanedEpisodes = array();
 	    foreach($episodes as $episode)
 	    {
-		    array_push($cleanedEpisodes, (object)[
-			    'id' => intval($episode['id']),
+	    	$episodeID = intval($episode['id']);
+	    	$cleanedEpisodes[$episodeID] = (object)[
+			    'id' => $episodeID,
 			    'episodeNum' => $episode['episode_number'],
 			    'seasonNum' => $episode['season_number'],
 			    'published' => date('m/d/Y', strtotime($episode['published_at'])),
@@ -111,34 +139,8 @@ class PodcastController extends Controller
 			    'tags' => explode(", ", $episode['tags']),
 			    'audioUrl' => $episode['audio_url'],
 			    'artworkUrl' => $episode['artwork_url']
-		    ]);
+		    ];
 	    }
-    	
     	return $cleanedEpisodes;
-    }
-
-    /**
-     * checks when the resource head was last modified.
-     * if the cached eTag matches the resource, get episodes in DB.
-     * if no cached eTag or empty DB table, GET episodes,
-     * store in DB, and cache response's eTag.
-     *
-     * @return void|array
-     */
-    public function getAllEpisodes()
-    {
-        $this->handleRequest();
-        // return array();
-    }
-
-    /**
-     * gets episode from DB
-     *
-     * @param int $id
-     * @return object
-     */
-	public function getEpisodeByID($id)
-	{
-	    return (object) [];
     }
 }
