@@ -28,41 +28,14 @@ class PodcastController extends Controller
     public function index()
     {
     	$episodes = $this->getEpisodes();
+	    if(!sizeof($episodes) || !is_array($episodes))
+	    {
+		    // redirect user to error page if no episodes are returned from response, or not found in the cache.
+		    return redirect('error', compact('episodes'));
+	    }
     	
     	return view('pages.home', compact('episodes'));
     }
-    
-    public function show($episodeID)
-    {
-    	$episode = $this->getEpisodeByID($episodeID);
-    	
-    	return view('pages.show', compact('episode'));
-    }
-	
-	/**
-	 * gets episode from cache. If none are stored then send request to get them.
-	 *
-	 * @param int $id
-	 * @return object
-	 */
-	public function getEpisodeByID($id)
-	{
-		$cachedEpisodes = Cache::get('latestEpisodes', array());
-		
-		$episode = $cachedEpisodes[$id];
-		if(sizeof($cachedEpisodes) && $episode)
-		{
-			return $episode;
-		}
-		else {
-			$result = $this->getEpisodes();
-			if(isset($result[$id]))
-			{
-				return $result[$id];
-			}
-			return redirect('error', "Looks like we have a 'snag' of our own and can't find that episode! Please refresh the page to try again.");
-		}
-	}
 
     /**
      * gets array of episodes from BuzzSprout or cache.
@@ -77,14 +50,46 @@ class PodcastController extends Controller
         
         $this->handleHeaders($response->headers());
         
-        $result = $this->handleResponse($response);
-        if(!sizeof($result) || !is_array($result))
-        {
-        	// redirect user to error page if no episodes are returned from response, or not found in the cache.
-	        return redirect('error', compact('result'));
-        }
-	    return $result;
+        return $this->handleResponse($response);
     }
+	
+	public function show($episodeID)
+	{
+		$episode = $this->getEpisodeByID($episodeID);
+		if(!$episode)
+		{
+			return redirect('error', "Looks like we have a 'snag' of our own and can't find that episode! Please refresh the page to try again.");
+		}
+		
+		return view('pages.show', compact('episode'));
+	}
+	
+	/**
+	 * gets episode from cache. If none are stored then send request to get them.
+	 *
+	 * @param int $id
+	 * @return object|bool
+	 */
+	public function getEpisodeByID($id)
+	{
+		$cachedEpisodes = Cache::get('latestEpisodes', array());
+		
+		$episode = $cachedEpisodes[$id];
+		if(sizeof($cachedEpisodes) && $episode)
+		{
+			return $episode;
+		}
+		else
+		{
+			$result = $this->getEpisodes();
+			if(isset($result[$id]))
+			{
+				return $result[$id];
+			}
+			
+			return false;
+		}
+	}
     
     protected function handleHeaders($headers)
     {

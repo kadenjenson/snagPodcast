@@ -7,37 +7,34 @@
 
     <div class="header-container">
         <div class="latest-episode">
-            <h1>This is the latest episode: {{ $episode->title }}</h1>
+            <h1>{{ $episode->title }}</h1>
         </div>
     </div>
 @endsection
 
 @section('page-content')
-    <h1>This is the page content.</h1>
+    @php ($id = array_key_first($episodes))
     @foreach ($episodes as $i => $item)
-        <div>{{ $i }}</div>
-        <div>{{ $item->title }}</div>
+        @if ($id === $i)
+            @continue
+        @endif
 
-{{--        @if ($i === 0)--}}
-{{--            @continue--}}
-{{--        @endif--}}
-
-{{--        <div class="snagCard card">--}}
-{{--            <div class="img-container col">--}}
-{{--                <img src="{{ $item->artUrl }}" alt="SnagPodcast Episode {{ $item->episode }}">--}}
-{{--            </div>--}}
-{{--            <div class="episode-info col">--}}
-{{--                <div class="title">--}}
-{{--                    <div class="episode-num"><i>S</i> {{ $item->season }} <i>E</i> {{ $item->episode }}</div>--}}
-{{--                    <a href={{ url('/episode/' . $item->id) }}>{{ $item->title }}</a>--}}
-{{--                </div>--}}
-{{--                <div class="sub title">{{ $item->summary }}</div>--}}
-{{--                <div class="sub title">{{ $item->artist }}</div>--}}
-{{--                <div class="tag">this is a tag</div>--}}
-{{--                 <div class="sub title">{{ $item->tags }}</div> --}}
-{{--                <div class="date">{{ $item->published }}</div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+        <div class="snagCard card">
+            <div class="img-container col">
+                <img src="{{ $item->artworkUrl }}" alt="SnagPodcast Episode {{ $item->episodeNum }}">
+            </div>
+            <div class="episode-info col">
+                <div class="title">
+                    <div class="episode-num"><i>S</i> {{ $item->seasonNum }} <i>E</i> {{ $item->episodeNum }}</div>
+                    <a href={{ url('/episode/' . $item->id) }}>{{ $item->title }}</a>
+                </div>
+                <div class="sub title">{{ $item->summary }}</div>
+                <div class="sub title">{{ $item->artist }}</div>
+                <div class="tag">this is a tag</div>
+{{--                 <div class="sub title">{{ $item->tags }}</div>--}}
+                <div class="date">{{ $item->published }}</div>
+            </div>
+        </div>
 
     @endforeach
 @endsection
