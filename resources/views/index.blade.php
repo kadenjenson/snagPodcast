@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <meta charset="utf-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -18,12 +19,12 @@
                 @include('includes.navbar')
             </header>
 
-            <div class="content-wrapper">
+            <section class="content-wrapper">
                 <div class="@yield('page-class', 'page')">
                     @yield('page-header', '')
                     @yield('page-content')
                 </div>
-            </div>
+            </section>
 
             <footer class="footer-wrapper">
                 @include('includes.footer')

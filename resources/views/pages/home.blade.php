@@ -13,26 +13,26 @@
 @endsection
 
 @section('page-content')
-    @php ($id = array_key_first($episodes))
-    @foreach ($episodes as $i => $item)
-        @if ($id === $i)
+    @php ($latestEpisodeID = array_key_first($episodes))
+    @foreach ($episodes as $id => $item)
+
+        @if ($latestEpisodeID === $id)
             @continue
         @endif
-
         <div class="snagCard card">
             <div class="img-container col">
-                <img src="{{ $item->artworkUrl }}" alt="SnagPodcast Episode {{ $item->episodeNum }}">
+                <img src="{{ $item->artworkUrl }}" alt="Snag Podcast Episode {{ $item->episodeNum }}">
             </div>
             <div class="episode-info col">
                 <div class="title">
                     <div class="episode-num"><i>S</i> {{ $item->seasonNum }} <i>E</i> {{ $item->episodeNum }}</div>
-                    <a href={{ url('/episode/' . $item->id) }}>{{ $item->title }}</a>
+                    <div class="episode-title link"><a href={{ url('/episode/' . $item->id) }}>{{ $item->title }}</a></div>
                 </div>
+                <div class="sub-title date">Uploaded on: {{ $item->published }}</div>
                 <div class="sub title">{{ $item->summary }}</div>
-                <div class="sub title">{{ $item->artist }}</div>
+                <div class="sub title">Hosts: {{ $item->artist }}</div>
                 <div class="tag">this is a tag</div>
 {{--                 <div class="sub title">{{ $item->tags }}</div>--}}
-                <div class="date">{{ $item->published }}</div>
             </div>
         </div>
 
