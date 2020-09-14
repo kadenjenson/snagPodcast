@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="text-gray-900 antialiased leading-tight">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>@yield('title', 'Snag Podcast')</title>
-        <meta name="keywords" content="" />
-        <meta name="description" content="" />
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
 
-        <link rel="stylesheet" href="css/app.css">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
 
     <body>

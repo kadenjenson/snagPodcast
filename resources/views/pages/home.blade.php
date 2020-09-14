@@ -1,5 +1,7 @@
 @extends('index')
 
+@section('title', 'Snag Podcast Home')
+
 @section('page-class', 'index page')
 
 @section('page-header')
