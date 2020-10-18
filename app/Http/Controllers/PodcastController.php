@@ -95,15 +95,16 @@ class PodcastController extends Controller
     {
     	if(sizeof($headers))
 	    {
-		    if(sizeof($headers['ETag']))
+//	        dd($headers);
+		    if(sizeof($headers['etag']))
 		    {
-			    Cache::put('ETag', $headers['ETag'][0]);
+			    Cache::put('ETag', $headers['etag'][0]);
 		    }
 		
-		    if(sizeof($headers['Last-Modified']))
-		    {
-			    Cache::put('LastModified', $headers['Last-Modified'][0]);
-		    }
+//		    if(sizeof($headers['Last-Modified']))
+//		    {
+//			    Cache::put('LastModified', $headers['Last-Modified'][0]);
+//		    }
 	    }
     }
     

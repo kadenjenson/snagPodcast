@@ -15,21 +15,19 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
 
-    <body>
-        <div class="main-app-container">
+    <body class="h-full min-h-screen w-full min-w-screen bg-gray-200">
+        <div class="main-app-container h-full min-h-screen">
 
-            <header class="nav-wrapper">
+            <header class="nav-wrapper h-16 w-full px-8 bg-white shadow">
                 @include('includes.navbar')
             </header>
 
-            <section class="content-wrapper">
-                <div class="@yield('page-class', 'page')">
-                    @yield('page-header', '')
-                    @yield('page-content')
-                </div>
+            <section class="content-wrapper h-full w-full @yield('page-class', '')">
+                @yield('page-header')
+                @yield('page-content')
             </section>
 
-            <footer class="footer-wrapper">
+            <footer class="footer-wrapper w-full p-8 bg-white border-purple-500 border-t-4">
                 @include('includes.footer')
             </footer>
 
