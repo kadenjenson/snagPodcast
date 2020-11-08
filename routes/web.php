@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PodcastController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// CUSTOM ROUTES
-Route::get('/', 'PodcastController@index');
-// Route::get('/episode/{id}', 'PodcastController@show');
+Route::get('/', [PodcastController::class, 'index']);
+Route::get('/episode/{id}', [PodcastController::class, 'show']);
 
 Route::get('/about', function()
 {

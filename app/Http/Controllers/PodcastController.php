@@ -28,38 +28,13 @@ class PodcastController extends Controller
     public function index()
     {
     	$episodes = $this->getEpisodes();
-	    if(!sizeof($episodes) || !is_array($episodes))
-	    {
-		    // redirect user to error page if no episodes are returned from response, or not found in the cache.
-		    return redirect('error', compact('episodes'));
-	    }
     	
     	return view('pages.home', compact('episodes'));
-    }
-
-    /**
-     * gets array of episodes from BuzzSprout or cache.
-     */
-    protected function getEpisodes()
-    {
-        $response = Http::withHeaders([
-            "Authorization" => "Token token={$this->podApiToken}",
-            "If-None-Match" => Cache::get('ETag', ''),
-            "If-Modified-Since" => Cache::get('LastModified', '')
-        ])->get("https://www.buzzsprout.com/api/{$this->podID}/episodes.json");
-        
-        $this->handleHeaders($response->headers());
-        
-        return $this->handleResponse($response);
     }
 	
 	public function show($episodeID)
 	{
 		$episode = $this->getEpisodeByID($episodeID);
-		if(!$episode)
-		{
-			return redirect('error', "Looks like we have a 'snag' of our own and can't find that episode! Please refresh the page to try again.");
-		}
 		
 		return view('pages.show', compact('episode'));
 	}
@@ -91,40 +66,68 @@ class PodcastController extends Controller
 		}
 	}
     
+    /**
+     * gets array of episodes from BuzzSprout or cache.
+     */
+    protected function getEpisodes()
+    {
+        $request = Http::withHeaders([
+            "Authorization" => "Token token={$this->podApiToken}",
+            "If-None-Match" => Cache::get('ETag', ''),
+            "If-Modified-Since" => Cache::get('LastModified', '')
+        ]);
+        
+        $response = $request->get("https://www.buzzsprout.com/api/{$this->podID}/episodes.json");
+        return $this->handleResponse($response);
+    }
+    
     protected function handleHeaders($headers)
     {
     	if(sizeof($headers))
 	    {
-//	        dd($headers);
-		    if(sizeof($headers['etag']))
+            $eTag = $headers['etag'] ?? $headers['ETag'];
+		    if($eTag && sizeof($eTag))
 		    {
-			    Cache::put('ETag', $headers['etag'][0]);
+			    Cache::put('ETag', $eTag[0]);
 		    }
 		
-//		    if(sizeof($headers['Last-Modified']))
-//		    {
-//			    Cache::put('LastModified', $headers['Last-Modified'][0]);
-//		    }
+		    $lastModified = $headers['last-modified'] ?? $headers['Last-Modified'];
+		    if($lastModified && sizeof($lastModified))
+		    {
+			    Cache::put('LastModified', $lastModified[0]);
+		    }
 	    }
+    }
+    
+    protected function handleStatus($status)
+    {
+        if($status == "304 Not Modified" || $status == 304)
+        {
+            $cachedEpisodes = Cache::get('latestEpisodes', array());
+            if(!sizeof($cachedEpisodes))
+            {
+                Cache::put('ETag', '');
+                Cache::put('LastModified', '');
+                return redirect('error', $status);
+            }
+        }
+        elseif($status >= 305)
+        {
+            return redirect('error', $status);
+        }
+        
+        return true;
     }
     
     protected function handleResponse($response)
     {
-    	$status = $response->status();
-	    if($status == "304 Not Modified" || $status == 304)
-	    {
-		    return Cache::get('latestEpisodes', array());
-	    }
-	    elseif($status >= 400 || $status >= 305)
-	    {
-	    	return $status;
-	    }
-	    else {
-	    	$episodes = $this->cleanEpisodes($response->json());
-	    	
-	    	Cache::put('latestEpisodes', $episodes);
-	    	return $episodes;
-	    }
+        $this->handleHeaders($response->headers());
+        $this->handleStatus($response->status());
+        
+        $episodes = $this->cleanEpisodes($response->json());
+        Cache::put('latestEpisodes', $episodes);
+        
+        return $episodes;
     }
     
     protected function cleanEpisodes($episodes)
