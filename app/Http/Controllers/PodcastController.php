@@ -68,6 +68,8 @@ class PodcastController extends Controller
     
     /**
      * gets array of episodes from BuzzSprout or cache.
+     *
+     * @return array
      */
     protected function getEpisodes()
     {
@@ -108,7 +110,7 @@ class PodcastController extends Controller
             {
                 Cache::put('ETag', '');
                 Cache::put('LastModified', '');
-                return redirect('error', $status);
+                return redirect('error', 304);
             }
         }
         elseif($status >= 305)
@@ -124,13 +126,20 @@ class PodcastController extends Controller
         $this->handleHeaders($response->headers());
         $this->handleStatus($response->status());
         
-        $episodes = $this->cleanEpisodes($response->json());
-        Cache::put('latestEpisodes', $episodes);
+        $episodes = $response->json();
+        if(!$episodes || !is_array($episodes))
+        {
+            $episodes = Cache::get('latestEpisodes', array());
+        }
+        else
+        {
+            $episodes = $this->cleanEpisodes($episodes);
+        }
         
         return $episodes;
     }
     
-    protected function cleanEpisodes($episodes)
+    protected function cleanEpisodes($episodes = array())
     {
     	$cleanedEpisodes = array();
 	    foreach($episodes as $episode)
