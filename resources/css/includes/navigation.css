@@ -1,0 +1,98 @@
+.nav-wrapper {
+    background-image: url(../../images/snagPodcast-banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* NAVIGATION BANNER STYLES */
+.nav-wrapper .banner {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -110px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: 140px;
+    width: 740px;
+    margin: 0 auto;
+    padding: 0 15px;
+    background-color: #13005C;
+    border-radius: 4px;
+    box-shadow: 0 0 20px -8px #000000;
+}
+.nav-wrapper .banner .text {
+    font-size: 35px;
+    text-align: center;
+    letter-spacing: 0.8px;
+}
+.nav-wrapper .banner span {
+    color: #DD1269;
+    font-size: 38px;
+}
+
+.nav-wrapper,
+.nav-wrapper .nav-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.nav-row .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background-color: theme('colors.white');
+    transition: all 200ms ease;
+}
+
+.nav-row .nav-link:hover::after,
+.nav-row .nav-link.active::after {
+    width: 100%;
+    background-color: theme('colors.purple.500');
+}
+
+.nav-row .nav-link a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.nav-link.logo {
+    align-self: flex-start;
+    z-index: 1;
+    height: 160px;
+    width: 160px;
+    margin: 20px 0 0 20px;
+    padding: 0;
+}
+
+.nav-link .logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    transition: 100ms all ease;
+    box-shadow: 0 0 20px -8px black;
+}
+
+.nav-link .logo-container img {
+    height: 100%;
+    width: 100%;
+    transition: 100ms all ease;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.nav-link .logo-container:hover {
+    height: 101%;
+    width: 101%;
+}

@@ -1,0 +1,59 @@
+.contact.page .contact-form {
+    width: 88%;
+}
+
+.contact.page .contact-form .row-items {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact.page .contact-form .row-items .row {
+    width: 45%;
+}
+
+.contact.page .contact-form .row {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.contact.page .contact-form .row label {
+    color: #747B87;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contact.page .contact-form .row input[type=text],
+.contact.page .contact-form .row textarea {
+    width: 100%;
+    margin: 8px 0;
+    padding: 6px 15px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000000;
+    box-shadow: 0 0 0 0 #000000;
+    opacity: 0.75;
+}
+
+.contact.page .contact-form .row input[type=text]:hover,
+.contact.page .contact-form .row textarea:hover {
+    transition: 200ms ease;
+    box-shadow: 0 3px 0 0 #000000;
+    opacity: 1;
+}
+
+.contact.page .contact-form .row input[type=text]:focus,
+.contact.page .contact-form .row textarea:focus {
+    transition: 200ms ease;
+    box-shadow: 0 3px 0 0 #000000;
+    opacity: 1;
+}
+
+.contact.page .contact-form .row .submit-btn {
+    height: 45px;
+    padding: 0 14px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: lightblue;
+}

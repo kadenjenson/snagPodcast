@@ -1,14 +1,14 @@
 @extends('index')
 
-@section('title', 'Snag Podcast Home')
+@section('title', 'Snag Podcast')
 
-@section('page-class', 'index page')
+@section('page-class', 'home page')
 
 @section('page-header')
     @php ($episode = $episodes[array_key_first($episodes)])
 
     <div class="header-container">
-        <div class="latest-episode">
+        <div class="title">
             <h1>{{ $episode->title }}</h1>
         </div>
     </div>

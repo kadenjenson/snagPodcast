@@ -1,0 +1,68 @@
+.home.page .header-container .latest-episode {
+    width: 80%;
+}
+
+.home.page .header-container .latest-episode #audio-player {
+    height: 60px;
+    width: 300px;
+}
+
+.home.page .tag {
+    width: auto;
+    padding: 8px;
+    background-color: #EA4695;
+    border-radius: 4px;
+}
+
+.home.page .snagCard {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.home.page .snagCard .img-container {
+    height: 250px;
+    width: 250px;
+}
+
+.home.page .snagCard .img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home.page .snagCard .episode-info {
+    width: 70%;
+}
+
+.home.page .snagCard .episode-info .title {
+    height: 50px;
+    width: 100%;
+}
+
+.home.page .snagCard .episode-info .title.sub {
+    height: auto;
+}
+
+.home.page .snagCard .episode-info .title .episode-num {
+    color: #98A7B9;
+    font-size: 45px;
+    font-weight: 800;
+    opacity: 0.75;
+}
+
+.home.page .snagCard .episode-info .title .episode-num i {
+    font-size: 45px;
+    font-weight: 800;
+}
+
+.home.page .snagCard .episode-info .title a {
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}

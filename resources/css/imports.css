@@ -2,3 +2,9 @@
     All new and custom css files should be imported here.
 */
 @import "main.css";
+@import "includes/navigation.css";
+@import "includes/footer.css";
+
+@import "pages/home.css";
+@import "pages/about.css";
+@import "pages/contact.css";

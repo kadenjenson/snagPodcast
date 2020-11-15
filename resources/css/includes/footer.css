@@ -1,0 +1,13 @@
+.footer-wrapper {
+    display: flex;
+    align-self: flex-end;
+    min-height: 6rem;
+}
+
+.footer-wrapper .col {
+    margin-right: 30px;
+}
+
+.footer-wrapper .col ul {
+    padding-left: 35px;
+}
