@@ -18,7 +18,7 @@
     <body class="h-full min-h-screen w-full min-w-screen bg-gray-200">
         <div class="main-app-container h-full min-h-screen">
 
-            <header class="nav-wrapper h-16 w-full px-8 bg-white shadow">
+            <header class="nav-wrapper h-24 w-full px-8 bg-white shadow">
                 @include('includes.navbar')
             </header>
 

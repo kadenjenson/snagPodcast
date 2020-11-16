@@ -4,35 +4,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-/* NAVIGATION BANNER STYLES */
-.nav-wrapper .banner {
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: -110px;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    height: 140px;
-    width: 740px;
-    margin: 0 auto;
-    padding: 0 15px;
-    background-color: #13005C;
-    border-radius: 4px;
-    box-shadow: 0 0 20px -8px #000000;
-}
-.nav-wrapper .banner .text {
-    font-size: 35px;
-    text-align: center;
-    letter-spacing: 0.8px;
-}
-.nav-wrapper .banner span {
-    color: #DD1269;
-    font-size: 38px;
-}
-
 .nav-wrapper,
 .nav-wrapper .nav-row {
     display: flex;
@@ -40,6 +11,7 @@
     justify-content: space-between;
 }
 
+/* NAV LINK STYLES */
 .nav-row .nav-link::after {
     content: "";
     position: absolute;
@@ -50,13 +22,11 @@
     background-color: theme('colors.white');
     transition: all 200ms ease;
 }
-
-.nav-row .nav-link:hover::after,
+.nav-row .nav-link:not(.logo):hover::after,
 .nav-row .nav-link.active::after {
     width: 100%;
     background-color: theme('colors.purple.500');
 }
-
 .nav-row .nav-link a {
     display: block;
     height: 100%;
@@ -64,15 +34,15 @@
     vertical-align: middle;
 }
 
+/* NAV LOGO STYLES */
 .nav-link.logo {
     align-self: flex-start;
     z-index: 1;
     height: 160px;
     width: 160px;
-    margin: 20px 0 0 20px;
+    margin-top: 20px;
     padding: 0;
 }
-
 .nav-link .logo-container {
     position: absolute;
     top: 50%;
@@ -80,10 +50,9 @@
     transform: translate(-50%, -50%);
     height: 100%;
     width: 100%;
-    transition: 100ms all ease;
+    transition: all 200ms ease;
     box-shadow: 0 0 20px -8px black;
 }
-
 .nav-link .logo-container img {
     height: 100%;
     width: 100%;
@@ -91,8 +60,17 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-
 .nav-link .logo-container:hover {
     height: 101%;
     width: 101%;
+}
+
+/* NAV TAGLINE STYLES */
+.nav-wrapper .nav-row.tagline {
+    align-self: center;
+    align-items: center;
+    letter-spacing: 0.8px;
+}
+.nav-wrapper .nav-row.tagline span {
+    color: theme('colors.snagPink');
 }
