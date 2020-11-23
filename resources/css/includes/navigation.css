@@ -25,7 +25,7 @@
 .nav-row .nav-link:not(.logo):hover::after,
 .nav-row .nav-link.active::after {
     width: 100%;
-    background-color: theme('colors.purple.500');
+    background-color: theme('colors.snagPink');
 }
 .nav-row .nav-link a {
     display: block;

@@ -27,15 +27,17 @@
             </div>
             <div class="episode-info col">
                 <div class="title">
-                    <div class="episode-num"><i>S</i> {{ $item->seasonNum }} <i>E</i> {{ $item->episodeNum }}</div>
-                    <div class="episode-title link"><a href={{ url('/episode/' . $item->id) }}>{{ $item->title }}</a></div>
+                    <span class="text-xl"><i>S</i> {{ $item->seasonNum }} <i>E</i> {{ $item->episodeNum }}</span> <a href={{ url('/episode/' . $item->id) }}>{{ $item->title }}</a>
                 </div>
-                <div class="sub-title date">Uploaded on: {{ $item->published }}</div>
-                <div class="sub title">{{ $item->summary }}</div>
-                <div class="sub title">Hosts: {{ $item->artist }}</div>
-                <div class="tag">this is a tag</div>
-{{--                 <div class="sub title">{{ $item->tags }}</div>--}}
+                <div class="sub title">Host(s): {{ $item->artist }}</div>
+                <div class="sub-title date">- {{ $item->publishedAt }}</div>
+                
+                {{-- TODO: refactor tags & create dedicated page for them. --}}
+                {{--<div class="tag">this is a tag</div>--}}
+                {{--<div class="sub title">{{ $item->tags }}</div>--}}
             </div>
+    
+            <p class="text-xl tracking-wide">{{ $item->summary }}</p>
         </div>
 
     @endforeach

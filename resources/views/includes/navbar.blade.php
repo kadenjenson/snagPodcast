@@ -18,5 +18,5 @@
 </div>
 
 <div class="nav-row tagline">
-    <div class="text-white text-2xl">NAVIGATING <span>THE SNAGS</span> OF LIFE, ONE STORY AT A TIME</div>
+    <div class="text-white text-2xl">Navigating <span>THE SNAGS</span> of Life, One Story at a Time</div>
 </div>

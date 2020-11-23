@@ -102,7 +102,7 @@
 .nav-row .nav-link:not(.logo):hover::after,
 .nav-row .nav-link.active::after {
   width: 100%;
-  background-color: #9f7aea;
+  background-color: #fc52a3;
 }
 
 .nav-row .nav-link a {
@@ -156,7 +156,7 @@
 }
 
 .nav-wrapper .nav-row.tagline span {
-  color: #fb69b0;
+  color: #fc52a3;
 }
 .footer-wrapper {
   display: flex;
@@ -180,17 +180,17 @@
   width: 300px;
 }
 
-.home.page .tag {
-  width: auto;
-  padding: 8px;
-  background-color: #EA4695;
-  border-radius: 4px;
-}
+/*.home.page .tag {*/
 
-.home.page .snagCard {
-  justify-content: space-between;
-  width: 100%;
-}
+/*    width: auto;*/
+
+/*    padding: 8px;*/
+
+/*    background-color: #EA4695;*/
+
+/*    border-radius: 4px;*/
+
+/*}*/
 
 .home.page .snagCard .img-container {
   height: 250px;
@@ -209,27 +209,14 @@
   background-size: cover;
 }
 
-.home.page .snagCard .episode-info {
-  width: 70%;
-}
-
-.home.page .snagCard .episode-info .title {
-  height: 50px;
-  width: 100%;
-}
-
-.home.page .snagCard .episode-info .title.sub {
-  height: auto;
-}
-
-.home.page .snagCard .episode-info .title .episode-num {
+.home.page .snagCard .episode-info .title span {
   color: #98A7B9;
   font-size: 45px;
   font-weight: 800;
   opacity: 0.75;
 }
 
-.home.page .snagCard .episode-info .title .episode-num i {
+.home.page .snagCard .episode-info .title span i {
   font-size: 45px;
   font-weight: 800;
 }
@@ -2071,8 +2058,8 @@ button:hover {
 
 .divide-snagPink > :not(template) ~ :not(template) {
   --divide-opacity: 1;
-  border-color: #fb69b0;
-  border-color: rgba(251, 105, 176, var(--divide-opacity));
+  border-color: #fc52a3;
+  border-color: rgba(252, 82, 163, var(--divide-opacity));
 }
 
 .divide-solid > :not(template) ~ :not(template) {
@@ -2764,8 +2751,8 @@ button:hover {
 
 .bg-snagPink {
   --bg-opacity: 1;
-  background-color: #fb69b0;
-  background-color: rgba(251, 105, 176, var(--bg-opacity));
+  background-color: #fc52a3;
+  background-color: rgba(252, 82, 163, var(--bg-opacity));
 }
 
 .hover\:bg-transparent:hover {
@@ -3336,8 +3323,8 @@ button:hover {
 
 .hover\:bg-snagPink:hover {
   --bg-opacity: 1;
-  background-color: #fb69b0;
-  background-color: rgba(251, 105, 176, var(--bg-opacity));
+  background-color: #fc52a3;
+  background-color: rgba(252, 82, 163, var(--bg-opacity));
 }
 
 .focus\:bg-transparent:focus {
@@ -3908,8 +3895,8 @@ button:hover {
 
 .focus\:bg-snagPink:focus {
   --bg-opacity: 1;
-  background-color: #fb69b0;
-  background-color: rgba(251, 105, 176, var(--bg-opacity));
+  background-color: #fc52a3;
+  background-color: rgba(252, 82, 163, var(--bg-opacity));
 }
 
 .bg-none {
@@ -4424,8 +4411,8 @@ button:hover {
 }
 
 .from-snagPink {
-  --gradient-from-color: #fb69b0;
-  --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+  --gradient-from-color: #fc52a3;
+  --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
 }
 
 .via-transparent {
@@ -4904,8 +4891,8 @@ button:hover {
 }
 
 .via-snagPink {
-  --gradient-via-color: #fb69b0;
-  --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+  --gradient-via-color: #fc52a3;
+  --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
 }
 
 .to-transparent {
@@ -5289,7 +5276,7 @@ button:hover {
 }
 
 .to-snagPink {
-  --gradient-to-color: #fb69b0;
+  --gradient-to-color: #fc52a3;
 }
 
 .hover\:from-transparent:hover {
@@ -5768,8 +5755,8 @@ button:hover {
 }
 
 .hover\:from-snagPink:hover {
-  --gradient-from-color: #fb69b0;
-  --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+  --gradient-from-color: #fc52a3;
+  --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
 }
 
 .hover\:via-transparent:hover {
@@ -6248,8 +6235,8 @@ button:hover {
 }
 
 .hover\:via-snagPink:hover {
-  --gradient-via-color: #fb69b0;
-  --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+  --gradient-via-color: #fc52a3;
+  --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
 }
 
 .hover\:to-transparent:hover {
@@ -6633,7 +6620,7 @@ button:hover {
 }
 
 .hover\:to-snagPink:hover {
-  --gradient-to-color: #fb69b0;
+  --gradient-to-color: #fc52a3;
 }
 
 .focus\:from-transparent:focus {
@@ -7112,8 +7099,8 @@ button:hover {
 }
 
 .focus\:from-snagPink:focus {
-  --gradient-from-color: #fb69b0;
-  --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+  --gradient-from-color: #fc52a3;
+  --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
 }
 
 .focus\:via-transparent:focus {
@@ -7592,8 +7579,8 @@ button:hover {
 }
 
 .focus\:via-snagPink:focus {
-  --gradient-via-color: #fb69b0;
-  --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+  --gradient-via-color: #fc52a3;
+  --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
 }
 
 .focus\:to-transparent:focus {
@@ -7977,7 +7964,7 @@ button:hover {
 }
 
 .focus\:to-snagPink:focus {
-  --gradient-to-color: #fb69b0;
+  --gradient-to-color: #fc52a3;
 }
 
 .bg-opacity-0 {
@@ -8688,8 +8675,8 @@ button:hover {
 
 .border-snagPink {
   --border-opacity: 1;
-  border-color: #fb69b0;
-  border-color: rgba(251, 105, 176, var(--border-opacity));
+  border-color: #fc52a3;
+  border-color: rgba(252, 82, 163, var(--border-opacity));
 }
 
 .hover\:border-transparent:hover {
@@ -9260,8 +9247,8 @@ button:hover {
 
 .hover\:border-snagPink:hover {
   --border-opacity: 1;
-  border-color: #fb69b0;
-  border-color: rgba(251, 105, 176, var(--border-opacity));
+  border-color: #fc52a3;
+  border-color: rgba(252, 82, 163, var(--border-opacity));
 }
 
 .focus\:border-transparent:focus {
@@ -9832,8 +9819,8 @@ button:hover {
 
 .focus\:border-snagPink:focus {
   --border-opacity: 1;
-  border-color: #fb69b0;
-  border-color: rgba(251, 105, 176, var(--border-opacity));
+  border-color: #fc52a3;
+  border-color: rgba(252, 82, 163, var(--border-opacity));
 }
 
 .border-opacity-0 {
@@ -14919,20 +14906,20 @@ button:hover {
 
 .placeholder-snagPink::-moz-placeholder {
   --placeholder-opacity: 1;
-  color: #fb69b0;
-  color: rgba(251, 105, 176, var(--placeholder-opacity));
+  color: #fc52a3;
+  color: rgba(252, 82, 163, var(--placeholder-opacity));
 }
 
 .placeholder-snagPink:-ms-input-placeholder {
   --placeholder-opacity: 1;
-  color: #fb69b0;
-  color: rgba(251, 105, 176, var(--placeholder-opacity));
+  color: #fc52a3;
+  color: rgba(252, 82, 163, var(--placeholder-opacity));
 }
 
 .placeholder-snagPink::placeholder {
   --placeholder-opacity: 1;
-  color: #fb69b0;
-  color: rgba(251, 105, 176, var(--placeholder-opacity));
+  color: #fc52a3;
+  color: rgba(252, 82, 163, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-transparent:focus::-moz-placeholder {
@@ -16635,20 +16622,20 @@ button:hover {
 
 .focus\:placeholder-snagPink:focus::-moz-placeholder {
   --placeholder-opacity: 1;
-  color: #fb69b0;
-  color: rgba(251, 105, 176, var(--placeholder-opacity));
+  color: #fc52a3;
+  color: rgba(252, 82, 163, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-snagPink:focus:-ms-input-placeholder {
   --placeholder-opacity: 1;
-  color: #fb69b0;
-  color: rgba(251, 105, 176, var(--placeholder-opacity));
+  color: #fc52a3;
+  color: rgba(252, 82, 163, var(--placeholder-opacity));
 }
 
 .focus\:placeholder-snagPink:focus::placeholder {
   --placeholder-opacity: 1;
-  color: #fb69b0;
-  color: rgba(251, 105, 176, var(--placeholder-opacity));
+  color: #fc52a3;
+  color: rgba(252, 82, 163, var(--placeholder-opacity));
 }
 
 .placeholder-opacity-0::-moz-placeholder {
@@ -17614,8 +17601,8 @@ button:hover {
 
 .text-snagPink {
   --text-opacity: 1;
-  color: #fb69b0;
-  color: rgba(251, 105, 176, var(--text-opacity));
+  color: #fc52a3;
+  color: rgba(252, 82, 163, var(--text-opacity));
 }
 
 .hover\:text-transparent:hover {
@@ -18186,8 +18173,8 @@ button:hover {
 
 .hover\:text-snagPink:hover {
   --text-opacity: 1;
-  color: #fb69b0;
-  color: rgba(251, 105, 176, var(--text-opacity));
+  color: #fc52a3;
+  color: rgba(252, 82, 163, var(--text-opacity));
 }
 
 .focus\:text-transparent:focus {
@@ -18758,8 +18745,8 @@ button:hover {
 
 .focus\:text-snagPink:focus {
   --text-opacity: 1;
-  color: #fb69b0;
-  color: rgba(251, 105, 176, var(--text-opacity));
+  color: #fc52a3;
+  color: rgba(252, 82, 163, var(--text-opacity));
 }
 
 .text-opacity-0 {
@@ -23400,8 +23387,8 @@ button:hover {
 
   .sm\:divide-snagPink > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--divide-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--divide-opacity));
   }
 
   .sm\:divide-solid > :not(template) ~ :not(template) {
@@ -24093,8 +24080,8 @@ button:hover {
 
   .sm\:bg-snagPink {
     --bg-opacity: 1;
-    background-color: #fb69b0;
-    background-color: rgba(251, 105, 176, var(--bg-opacity));
+    background-color: #fc52a3;
+    background-color: rgba(252, 82, 163, var(--bg-opacity));
   }
 
   .sm\:hover\:bg-transparent:hover {
@@ -24665,8 +24652,8 @@ button:hover {
 
   .sm\:hover\:bg-snagPink:hover {
     --bg-opacity: 1;
-    background-color: #fb69b0;
-    background-color: rgba(251, 105, 176, var(--bg-opacity));
+    background-color: #fc52a3;
+    background-color: rgba(252, 82, 163, var(--bg-opacity));
   }
 
   .sm\:focus\:bg-transparent:focus {
@@ -25237,8 +25224,8 @@ button:hover {
 
   .sm\:focus\:bg-snagPink:focus {
     --bg-opacity: 1;
-    background-color: #fb69b0;
-    background-color: rgba(251, 105, 176, var(--bg-opacity));
+    background-color: #fc52a3;
+    background-color: rgba(252, 82, 163, var(--bg-opacity));
   }
 
   .sm\:bg-none {
@@ -25753,8 +25740,8 @@ button:hover {
   }
 
   .sm\:from-snagPink {
-    --gradient-from-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-from-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .sm\:via-transparent {
@@ -26233,8 +26220,8 @@ button:hover {
   }
 
   .sm\:via-snagPink {
-    --gradient-via-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-via-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .sm\:to-transparent {
@@ -26618,7 +26605,7 @@ button:hover {
   }
 
   .sm\:to-snagPink {
-    --gradient-to-color: #fb69b0;
+    --gradient-to-color: #fc52a3;
   }
 
   .sm\:hover\:from-transparent:hover {
@@ -27097,8 +27084,8 @@ button:hover {
   }
 
   .sm\:hover\:from-snagPink:hover {
-    --gradient-from-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-from-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .sm\:hover\:via-transparent:hover {
@@ -27577,8 +27564,8 @@ button:hover {
   }
 
   .sm\:hover\:via-snagPink:hover {
-    --gradient-via-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-via-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .sm\:hover\:to-transparent:hover {
@@ -27962,7 +27949,7 @@ button:hover {
   }
 
   .sm\:hover\:to-snagPink:hover {
-    --gradient-to-color: #fb69b0;
+    --gradient-to-color: #fc52a3;
   }
 
   .sm\:focus\:from-transparent:focus {
@@ -28441,8 +28428,8 @@ button:hover {
   }
 
   .sm\:focus\:from-snagPink:focus {
-    --gradient-from-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-from-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .sm\:focus\:via-transparent:focus {
@@ -28921,8 +28908,8 @@ button:hover {
   }
 
   .sm\:focus\:via-snagPink:focus {
-    --gradient-via-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-via-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .sm\:focus\:to-transparent:focus {
@@ -29306,7 +29293,7 @@ button:hover {
   }
 
   .sm\:focus\:to-snagPink:focus {
-    --gradient-to-color: #fb69b0;
+    --gradient-to-color: #fc52a3;
   }
 
   .sm\:bg-opacity-0 {
@@ -30017,8 +30004,8 @@ button:hover {
 
   .sm\:border-snagPink {
     --border-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--border-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--border-opacity));
   }
 
   .sm\:hover\:border-transparent:hover {
@@ -30589,8 +30576,8 @@ button:hover {
 
   .sm\:hover\:border-snagPink:hover {
     --border-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--border-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--border-opacity));
   }
 
   .sm\:focus\:border-transparent:focus {
@@ -31161,8 +31148,8 @@ button:hover {
 
   .sm\:focus\:border-snagPink:focus {
     --border-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--border-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--border-opacity));
   }
 
   .sm\:border-opacity-0 {
@@ -36248,20 +36235,20 @@ button:hover {
 
   .sm\:placeholder-snagPink::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-snagPink:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-snagPink::placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-transparent:focus::-moz-placeholder {
@@ -37964,20 +37951,20 @@ button:hover {
 
   .sm\:focus\:placeholder-snagPink:focus::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-snagPink:focus:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .sm\:focus\:placeholder-snagPink:focus::placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .sm\:placeholder-opacity-0::-moz-placeholder {
@@ -38943,8 +38930,8 @@ button:hover {
 
   .sm\:text-snagPink {
     --text-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--text-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--text-opacity));
   }
 
   .sm\:hover\:text-transparent:hover {
@@ -39515,8 +39502,8 @@ button:hover {
 
   .sm\:hover\:text-snagPink:hover {
     --text-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--text-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--text-opacity));
   }
 
   .sm\:focus\:text-transparent:focus {
@@ -40087,8 +40074,8 @@ button:hover {
 
   .sm\:focus\:text-snagPink:focus {
     --text-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--text-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--text-opacity));
   }
 
   .sm\:text-opacity-0 {
@@ -44664,8 +44651,8 @@ button:hover {
 
   .md\:divide-snagPink > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--divide-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--divide-opacity));
   }
 
   .md\:divide-solid > :not(template) ~ :not(template) {
@@ -45357,8 +45344,8 @@ button:hover {
 
   .md\:bg-snagPink {
     --bg-opacity: 1;
-    background-color: #fb69b0;
-    background-color: rgba(251, 105, 176, var(--bg-opacity));
+    background-color: #fc52a3;
+    background-color: rgba(252, 82, 163, var(--bg-opacity));
   }
 
   .md\:hover\:bg-transparent:hover {
@@ -45929,8 +45916,8 @@ button:hover {
 
   .md\:hover\:bg-snagPink:hover {
     --bg-opacity: 1;
-    background-color: #fb69b0;
-    background-color: rgba(251, 105, 176, var(--bg-opacity));
+    background-color: #fc52a3;
+    background-color: rgba(252, 82, 163, var(--bg-opacity));
   }
 
   .md\:focus\:bg-transparent:focus {
@@ -46501,8 +46488,8 @@ button:hover {
 
   .md\:focus\:bg-snagPink:focus {
     --bg-opacity: 1;
-    background-color: #fb69b0;
-    background-color: rgba(251, 105, 176, var(--bg-opacity));
+    background-color: #fc52a3;
+    background-color: rgba(252, 82, 163, var(--bg-opacity));
   }
 
   .md\:bg-none {
@@ -47017,8 +47004,8 @@ button:hover {
   }
 
   .md\:from-snagPink {
-    --gradient-from-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-from-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .md\:via-transparent {
@@ -47497,8 +47484,8 @@ button:hover {
   }
 
   .md\:via-snagPink {
-    --gradient-via-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-via-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .md\:to-transparent {
@@ -47882,7 +47869,7 @@ button:hover {
   }
 
   .md\:to-snagPink {
-    --gradient-to-color: #fb69b0;
+    --gradient-to-color: #fc52a3;
   }
 
   .md\:hover\:from-transparent:hover {
@@ -48361,8 +48348,8 @@ button:hover {
   }
 
   .md\:hover\:from-snagPink:hover {
-    --gradient-from-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-from-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .md\:hover\:via-transparent:hover {
@@ -48841,8 +48828,8 @@ button:hover {
   }
 
   .md\:hover\:via-snagPink:hover {
-    --gradient-via-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-via-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .md\:hover\:to-transparent:hover {
@@ -49226,7 +49213,7 @@ button:hover {
   }
 
   .md\:hover\:to-snagPink:hover {
-    --gradient-to-color: #fb69b0;
+    --gradient-to-color: #fc52a3;
   }
 
   .md\:focus\:from-transparent:focus {
@@ -49705,8 +49692,8 @@ button:hover {
   }
 
   .md\:focus\:from-snagPink:focus {
-    --gradient-from-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-from-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .md\:focus\:via-transparent:focus {
@@ -50185,8 +50172,8 @@ button:hover {
   }
 
   .md\:focus\:via-snagPink:focus {
-    --gradient-via-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-via-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .md\:focus\:to-transparent:focus {
@@ -50570,7 +50557,7 @@ button:hover {
   }
 
   .md\:focus\:to-snagPink:focus {
-    --gradient-to-color: #fb69b0;
+    --gradient-to-color: #fc52a3;
   }
 
   .md\:bg-opacity-0 {
@@ -51281,8 +51268,8 @@ button:hover {
 
   .md\:border-snagPink {
     --border-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--border-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--border-opacity));
   }
 
   .md\:hover\:border-transparent:hover {
@@ -51853,8 +51840,8 @@ button:hover {
 
   .md\:hover\:border-snagPink:hover {
     --border-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--border-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--border-opacity));
   }
 
   .md\:focus\:border-transparent:focus {
@@ -52425,8 +52412,8 @@ button:hover {
 
   .md\:focus\:border-snagPink:focus {
     --border-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--border-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--border-opacity));
   }
 
   .md\:border-opacity-0 {
@@ -57512,20 +57499,20 @@ button:hover {
 
   .md\:placeholder-snagPink::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .md\:placeholder-snagPink:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .md\:placeholder-snagPink::placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-transparent:focus::-moz-placeholder {
@@ -59228,20 +59215,20 @@ button:hover {
 
   .md\:focus\:placeholder-snagPink:focus::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-snagPink:focus:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .md\:focus\:placeholder-snagPink:focus::placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .md\:placeholder-opacity-0::-moz-placeholder {
@@ -60207,8 +60194,8 @@ button:hover {
 
   .md\:text-snagPink {
     --text-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--text-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--text-opacity));
   }
 
   .md\:hover\:text-transparent:hover {
@@ -60779,8 +60766,8 @@ button:hover {
 
   .md\:hover\:text-snagPink:hover {
     --text-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--text-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--text-opacity));
   }
 
   .md\:focus\:text-transparent:focus {
@@ -61351,8 +61338,8 @@ button:hover {
 
   .md\:focus\:text-snagPink:focus {
     --text-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--text-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--text-opacity));
   }
 
   .md\:text-opacity-0 {
@@ -65928,8 +65915,8 @@ button:hover {
 
   .lg\:divide-snagPink > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--divide-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--divide-opacity));
   }
 
   .lg\:divide-solid > :not(template) ~ :not(template) {
@@ -66621,8 +66608,8 @@ button:hover {
 
   .lg\:bg-snagPink {
     --bg-opacity: 1;
-    background-color: #fb69b0;
-    background-color: rgba(251, 105, 176, var(--bg-opacity));
+    background-color: #fc52a3;
+    background-color: rgba(252, 82, 163, var(--bg-opacity));
   }
 
   .lg\:hover\:bg-transparent:hover {
@@ -67193,8 +67180,8 @@ button:hover {
 
   .lg\:hover\:bg-snagPink:hover {
     --bg-opacity: 1;
-    background-color: #fb69b0;
-    background-color: rgba(251, 105, 176, var(--bg-opacity));
+    background-color: #fc52a3;
+    background-color: rgba(252, 82, 163, var(--bg-opacity));
   }
 
   .lg\:focus\:bg-transparent:focus {
@@ -67765,8 +67752,8 @@ button:hover {
 
   .lg\:focus\:bg-snagPink:focus {
     --bg-opacity: 1;
-    background-color: #fb69b0;
-    background-color: rgba(251, 105, 176, var(--bg-opacity));
+    background-color: #fc52a3;
+    background-color: rgba(252, 82, 163, var(--bg-opacity));
   }
 
   .lg\:bg-none {
@@ -68281,8 +68268,8 @@ button:hover {
   }
 
   .lg\:from-snagPink {
-    --gradient-from-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-from-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .lg\:via-transparent {
@@ -68761,8 +68748,8 @@ button:hover {
   }
 
   .lg\:via-snagPink {
-    --gradient-via-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-via-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .lg\:to-transparent {
@@ -69146,7 +69133,7 @@ button:hover {
   }
 
   .lg\:to-snagPink {
-    --gradient-to-color: #fb69b0;
+    --gradient-to-color: #fc52a3;
   }
 
   .lg\:hover\:from-transparent:hover {
@@ -69625,8 +69612,8 @@ button:hover {
   }
 
   .lg\:hover\:from-snagPink:hover {
-    --gradient-from-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-from-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .lg\:hover\:via-transparent:hover {
@@ -70105,8 +70092,8 @@ button:hover {
   }
 
   .lg\:hover\:via-snagPink:hover {
-    --gradient-via-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-via-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .lg\:hover\:to-transparent:hover {
@@ -70490,7 +70477,7 @@ button:hover {
   }
 
   .lg\:hover\:to-snagPink:hover {
-    --gradient-to-color: #fb69b0;
+    --gradient-to-color: #fc52a3;
   }
 
   .lg\:focus\:from-transparent:focus {
@@ -70969,8 +70956,8 @@ button:hover {
   }
 
   .lg\:focus\:from-snagPink:focus {
-    --gradient-from-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-from-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .lg\:focus\:via-transparent:focus {
@@ -71449,8 +71436,8 @@ button:hover {
   }
 
   .lg\:focus\:via-snagPink:focus {
-    --gradient-via-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-via-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .lg\:focus\:to-transparent:focus {
@@ -71834,7 +71821,7 @@ button:hover {
   }
 
   .lg\:focus\:to-snagPink:focus {
-    --gradient-to-color: #fb69b0;
+    --gradient-to-color: #fc52a3;
   }
 
   .lg\:bg-opacity-0 {
@@ -72545,8 +72532,8 @@ button:hover {
 
   .lg\:border-snagPink {
     --border-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--border-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--border-opacity));
   }
 
   .lg\:hover\:border-transparent:hover {
@@ -73117,8 +73104,8 @@ button:hover {
 
   .lg\:hover\:border-snagPink:hover {
     --border-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--border-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--border-opacity));
   }
 
   .lg\:focus\:border-transparent:focus {
@@ -73689,8 +73676,8 @@ button:hover {
 
   .lg\:focus\:border-snagPink:focus {
     --border-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--border-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--border-opacity));
   }
 
   .lg\:border-opacity-0 {
@@ -78776,20 +78763,20 @@ button:hover {
 
   .lg\:placeholder-snagPink::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-snagPink:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-snagPink::placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-transparent:focus::-moz-placeholder {
@@ -80492,20 +80479,20 @@ button:hover {
 
   .lg\:focus\:placeholder-snagPink:focus::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-snagPink:focus:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .lg\:focus\:placeholder-snagPink:focus::placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .lg\:placeholder-opacity-0::-moz-placeholder {
@@ -81471,8 +81458,8 @@ button:hover {
 
   .lg\:text-snagPink {
     --text-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--text-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--text-opacity));
   }
 
   .lg\:hover\:text-transparent:hover {
@@ -82043,8 +82030,8 @@ button:hover {
 
   .lg\:hover\:text-snagPink:hover {
     --text-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--text-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--text-opacity));
   }
 
   .lg\:focus\:text-transparent:focus {
@@ -82615,8 +82602,8 @@ button:hover {
 
   .lg\:focus\:text-snagPink:focus {
     --text-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--text-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--text-opacity));
   }
 
   .lg\:text-opacity-0 {
@@ -87192,8 +87179,8 @@ button:hover {
 
   .xl\:divide-snagPink > :not(template) ~ :not(template) {
     --divide-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--divide-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--divide-opacity));
   }
 
   .xl\:divide-solid > :not(template) ~ :not(template) {
@@ -87885,8 +87872,8 @@ button:hover {
 
   .xl\:bg-snagPink {
     --bg-opacity: 1;
-    background-color: #fb69b0;
-    background-color: rgba(251, 105, 176, var(--bg-opacity));
+    background-color: #fc52a3;
+    background-color: rgba(252, 82, 163, var(--bg-opacity));
   }
 
   .xl\:hover\:bg-transparent:hover {
@@ -88457,8 +88444,8 @@ button:hover {
 
   .xl\:hover\:bg-snagPink:hover {
     --bg-opacity: 1;
-    background-color: #fb69b0;
-    background-color: rgba(251, 105, 176, var(--bg-opacity));
+    background-color: #fc52a3;
+    background-color: rgba(252, 82, 163, var(--bg-opacity));
   }
 
   .xl\:focus\:bg-transparent:focus {
@@ -89029,8 +89016,8 @@ button:hover {
 
   .xl\:focus\:bg-snagPink:focus {
     --bg-opacity: 1;
-    background-color: #fb69b0;
-    background-color: rgba(251, 105, 176, var(--bg-opacity));
+    background-color: #fc52a3;
+    background-color: rgba(252, 82, 163, var(--bg-opacity));
   }
 
   .xl\:bg-none {
@@ -89545,8 +89532,8 @@ button:hover {
   }
 
   .xl\:from-snagPink {
-    --gradient-from-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-from-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .xl\:via-transparent {
@@ -90025,8 +90012,8 @@ button:hover {
   }
 
   .xl\:via-snagPink {
-    --gradient-via-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-via-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .xl\:to-transparent {
@@ -90410,7 +90397,7 @@ button:hover {
   }
 
   .xl\:to-snagPink {
-    --gradient-to-color: #fb69b0;
+    --gradient-to-color: #fc52a3;
   }
 
   .xl\:hover\:from-transparent:hover {
@@ -90889,8 +90876,8 @@ button:hover {
   }
 
   .xl\:hover\:from-snagPink:hover {
-    --gradient-from-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-from-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .xl\:hover\:via-transparent:hover {
@@ -91369,8 +91356,8 @@ button:hover {
   }
 
   .xl\:hover\:via-snagPink:hover {
-    --gradient-via-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-via-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .xl\:hover\:to-transparent:hover {
@@ -91754,7 +91741,7 @@ button:hover {
   }
 
   .xl\:hover\:to-snagPink:hover {
-    --gradient-to-color: #fb69b0;
+    --gradient-to-color: #fc52a3;
   }
 
   .xl\:focus\:from-transparent:focus {
@@ -92233,8 +92220,8 @@ button:hover {
   }
 
   .xl\:focus\:from-snagPink:focus {
-    --gradient-from-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-from-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .xl\:focus\:via-transparent:focus {
@@ -92713,8 +92700,8 @@ button:hover {
   }
 
   .xl\:focus\:via-snagPink:focus {
-    --gradient-via-color: #fb69b0;
-    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(251, 105, 176, 0));
+    --gradient-via-color: #fc52a3;
+    --gradient-color-stops: var(--gradient-from-color), var(--gradient-via-color), var(--gradient-to-color, rgba(252, 82, 163, 0));
   }
 
   .xl\:focus\:to-transparent:focus {
@@ -93098,7 +93085,7 @@ button:hover {
   }
 
   .xl\:focus\:to-snagPink:focus {
-    --gradient-to-color: #fb69b0;
+    --gradient-to-color: #fc52a3;
   }
 
   .xl\:bg-opacity-0 {
@@ -93809,8 +93796,8 @@ button:hover {
 
   .xl\:border-snagPink {
     --border-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--border-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--border-opacity));
   }
 
   .xl\:hover\:border-transparent:hover {
@@ -94381,8 +94368,8 @@ button:hover {
 
   .xl\:hover\:border-snagPink:hover {
     --border-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--border-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--border-opacity));
   }
 
   .xl\:focus\:border-transparent:focus {
@@ -94953,8 +94940,8 @@ button:hover {
 
   .xl\:focus\:border-snagPink:focus {
     --border-opacity: 1;
-    border-color: #fb69b0;
-    border-color: rgba(251, 105, 176, var(--border-opacity));
+    border-color: #fc52a3;
+    border-color: rgba(252, 82, 163, var(--border-opacity));
   }
 
   .xl\:border-opacity-0 {
@@ -100040,20 +100027,20 @@ button:hover {
 
   .xl\:placeholder-snagPink::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-snagPink:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-snagPink::placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-transparent:focus::-moz-placeholder {
@@ -101756,20 +101743,20 @@ button:hover {
 
   .xl\:focus\:placeholder-snagPink:focus::-moz-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-snagPink:focus:-ms-input-placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .xl\:focus\:placeholder-snagPink:focus::placeholder {
     --placeholder-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--placeholder-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--placeholder-opacity));
   }
 
   .xl\:placeholder-opacity-0::-moz-placeholder {
@@ -102735,8 +102722,8 @@ button:hover {
 
   .xl\:text-snagPink {
     --text-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--text-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--text-opacity));
   }
 
   .xl\:hover\:text-transparent:hover {
@@ -103307,8 +103294,8 @@ button:hover {
 
   .xl\:hover\:text-snagPink:hover {
     --text-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--text-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--text-opacity));
   }
 
   .xl\:focus\:text-transparent:focus {
@@ -103879,8 +103866,8 @@ button:hover {
 
   .xl\:focus\:text-snagPink:focus {
     --text-opacity: 1;
-    color: #fb69b0;
-    color: rgba(251, 105, 176, var(--text-opacity));
+    color: #fc52a3;
+    color: rgba(252, 82, 163, var(--text-opacity));
   }
 
   .xl\:text-opacity-0 {

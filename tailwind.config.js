@@ -4,7 +4,7 @@ module.exports = {
         extend: {
             colors: {
                 babyBlue: "#51c8ff",
-                snagPink: "#fb69b0"
+                snagPink: "#fc52a3"
             }
         }
     },
