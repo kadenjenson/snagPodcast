@@ -32,9 +32,9 @@ class PodcastController extends Controller
     	return view('pages.home', compact('episodes'));
     }
 	
-	public function show($episodeID)
+	public function show($id)
 	{
-		$episode = $this->getEpisodeByID($episodeID);
+		$episode = $this->getEpisodeByID($id);
 		
 		return view('pages.show', compact('episode'));
 	}
@@ -45,7 +45,7 @@ class PodcastController extends Controller
 	 * @param int $id
 	 * @return object|bool
 	 */
-	public function getEpisodeByID($id)
+	public function getEpisodeByID(int $id)
 	{
 		$cachedEpisodes = Cache::get('latestEpisodes', array());
 		
@@ -83,6 +83,24 @@ class PodcastController extends Controller
         return $this->handleResponse($response);
     }
     
+    protected function handleResponse($response)
+    {
+        $this->handleHeaders($response->headers());
+        $status = $this->handleStatus($response->status());
+        $episodes = $response->json();
+        
+        if(!$episodes || $status === 304)
+        {
+            $episodes = Cache::get('latestEpisodes', array());
+        }
+        else
+        {
+            $latestEpisodes = $this->cleanEpisodes($episodes);
+            Cache::put('latestEpisodes', $latestEpisodes);
+        }
+        return $episodes;
+    }
+    
     protected function handleHeaders($headers)
     {
     	if(sizeof($headers))
@@ -103,40 +121,22 @@ class PodcastController extends Controller
     
     protected function handleStatus($status)
     {
-        if($status == "304 Not Modified" || $status == 304)
+        if($status == 304 || $status == "304 Not Modified")
         {
             $cachedEpisodes = Cache::get('latestEpisodes', array());
             if(!sizeof($cachedEpisodes))
             {
                 Cache::put('ETag', '');
                 Cache::put('LastModified', '');
-                return redirect('error', 304);
+                return 304;
             }
         }
         elseif($status >= 305)
         {
-            return redirect('error', $status);
+            redirect('error', $status);
         }
         
         return true;
-    }
-    
-    protected function handleResponse($response)
-    {
-        $this->handleHeaders($response->headers());
-        $this->handleStatus($response->status());
-        
-        $episodes = $response->json();
-        if(!$episodes || !is_array($episodes))
-        {
-            $episodes = Cache::get('latestEpisodes', array());
-        }
-        else
-        {
-            $episodes = $this->cleanEpisodes($episodes);
-        }
-        
-        return $episodes;
     }
     
     protected function cleanEpisodes($episodes = array())
@@ -149,7 +149,7 @@ class PodcastController extends Controller
 			    'id' => $episodeID,
 			    'episodeNum' => $episode['episode_number'],
 			    'seasonNum' => $episode['season_number'],
-			    'published' => date('m/d/Y', strtotime($episode['published_at'])),
+			    'publishedAt' => date('l M jS, Y', strtotime($episode['published_at'])),
 			    'title' => $episode['title'],
 			    'description' => strip_tags($episode['description']),
 			    'summary' => $episode['summary'],
