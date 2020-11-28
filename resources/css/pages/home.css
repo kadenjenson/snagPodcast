@@ -1,8 +1,7 @@
-.home.page .header-container .latest-episode {
+.home.page .latest-episode {
     width: 80%;
 }
-
-.home.page .header-container .latest-episode #audio-player {
+.home.page .latest-episode #audio-player {
     height: 60px;
     width: 300px;
 }
@@ -14,12 +13,11 @@
 /*    border-radius: 4px;*/
 /*}*/
 
-.home.page .snagCard .img-container {
+.home.page .episode .img-container {
     height: 250px;
     width: 250px;
 }
-
-.home.page .snagCard .img-container img {
+.home.page .episode .img-container img {
     position: absolute;
     top: 0;
     left: 0;
@@ -30,21 +28,17 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.home.page .snagCard .episode-info .title span {
+.home.page .episode .title span {
     color: #98A7B9;
-    font-size: 45px;
+    font-size: 42px;
     font-weight: 800;
     opacity: 0.75;
 }
-
-.home.page .snagCard .episode-info .title span i {
-    font-size: 45px;
+.home.page .episode .title span i {
+    font-size: 43px;
     font-weight: 800;
 }
-
-.home.page .snagCard .episode-info .title a {
-    font-size: 24px;
+.home.page .episode .episode-info .title a {
     font-weight: 700;
     text-decoration: none;
 }

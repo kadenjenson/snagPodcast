@@ -22,7 +22,7 @@
                 @include('includes.navbar')
             </header>
 
-            <section class="content-wrapper h-full w-full @yield('page-class', '')">
+            <section class="container h-full @yield('page-class', '')">
                 @yield('page-header')
                 @yield('page-content')
             </section>

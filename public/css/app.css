@@ -6,9 +6,9 @@
 
 .content-wrapper {
   display: flex;
+  flex-wrap: wrap;
   align-self: center;
   justify-content: center;
-  flex-wrap: wrap;
   padding: 0 50px;
 }
 
@@ -22,7 +22,6 @@
 
 .header-container .title {
   padding: 6px 0;
-  font-family: "Alegreya Sans", sans-serif;
   font-size: 40px;
   font-weight: bold;
   letter-spacing: 0.8px;
@@ -171,11 +170,11 @@
 .footer-wrapper .col ul {
   padding-left: 35px;
 }
-.home.page .header-container .latest-episode {
+.home.page .latest-episode {
   width: 80%;
 }
 
-.home.page .header-container .latest-episode #audio-player {
+.home.page .latest-episode #audio-player {
   height: 60px;
   width: 300px;
 }
@@ -192,12 +191,12 @@
 
 /*}*/
 
-.home.page .snagCard .img-container {
+.home.page .episode .img-container {
   height: 250px;
   width: 250px;
 }
 
-.home.page .snagCard .img-container img {
+.home.page .episode .img-container img {
   position: absolute;
   top: 0;
   left: 0;
@@ -209,20 +208,19 @@
   background-size: cover;
 }
 
-.home.page .snagCard .episode-info .title span {
+.home.page .episode .title span {
   color: #98A7B9;
-  font-size: 45px;
+  font-size: 42px;
   font-weight: 800;
   opacity: 0.75;
 }
 
-.home.page .snagCard .episode-info .title span i {
-  font-size: 45px;
+.home.page .episode .title span i {
+  font-size: 43px;
   font-weight: 800;
 }
 
-.home.page .snagCard .episode-info .title a {
-  font-size: 24px;
+.home.page .episode .episode-info .title a {
   font-weight: 700;
   text-decoration: none;
 }
@@ -879,31 +877,6 @@ video {
   height: auto;
 }
 
-@font-face {
-  font-family: "Alegreya Sans", sans-serif;
-
-  src: url(/fonts/AlegreyaSans-LightItalic.ttf?7b6488dc9118e788b92c99285c208550) format("truetype"),
-        url(/fonts/AlegreyaSans-Light.ttf?15a542eabd31a51063376540597638b3) format("truetype"),
-        url(/fonts/AlegreyaSans-Regular.ttf?faa3c83d580611cb766fbedafddedf21) format("truetype"),
-        url(/fonts/AlegreyaSans-Italic.ttf?fb1083e5dd19f9b1eb8983ffdcc9fb46) format("truetype"),
-        url(/fonts/AlegreyaSans-Medium.ttf?5a3f02a790b8282ba62f83bf2afcd0f6) format("truetype"),
-        url(/fonts/AlegreyaSans-MediumItalic.ttf?e10f682a050ee45fe335a248426c0124) format("truetype"),
-        url(/fonts/AlegreyaSans-Bold.ttf?1e3960b45fa41b6383b8f34c181432d0) format("truetype"),
-        url(/fonts/AlegreyaSans-ExtraBold.ttf?8d99c45d7a22b18a43383fc07e6d1c72) format("truetype");
-}
-
-@font-face {
-  font-family: "Muli", sans-serif;
-
-  src: url(/fonts/Muli-Light.ttf?d80af0828fe7e5236cb28e3bbcdf9e87) format("truetype"),
-        url(/fonts/Muli-LightItalic.ttf?70c475e998d8e642b30de75a5784ec5f) format("truetype"),
-        url(/fonts/Muli-Regular.ttf?e063a333cc9d58a3ad85d5cd86bf92d5) format("truetype"),
-        url(/fonts/Muli-Italic.ttf?42ba31045765427e247a38c7e2c50e41) format("truetype"),
-        url(/fonts/Muli-SemiBold.ttf?3217b2cde8e4451eb8a8572d39798598) format("truetype"),
-        url(/fonts/Muli-SemiBoldItalic.ttf?17c1038fa865fea142dfd68676518105) format("truetype"),
-        url(/fonts/Muli-Bold.ttf?44ea8275e878ed72a9c8a393f9de12d2) format("truetype");
-}
-
 *,
     ::before,
     ::after {
@@ -944,6 +917,8 @@ button:hover {
 
 .container {
   width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (min-width: 640px) {
@@ -22273,6 +22248,8 @@ button:hover {
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {
@@ -43537,6 +43514,8 @@ button:hover {
 @media (min-width: 768px) {
   .md\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {
@@ -64801,6 +64780,8 @@ button:hover {
 @media (min-width: 1024px) {
   .lg\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {
@@ -86065,6 +86046,8 @@ button:hover {
 @media (min-width: 1280px) {
   .xl\:container {
     width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {

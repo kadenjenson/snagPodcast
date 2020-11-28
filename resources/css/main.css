@@ -6,9 +6,9 @@
 
 .content-wrapper {
     display: flex;
+    flex-wrap: wrap;
     align-self: center;
     justify-content: center;
-    flex-wrap: wrap;
     padding: 0 50px;
 }
 
@@ -21,7 +21,6 @@
 }
 .header-container .title {
     padding: 6px 0;
-    font-family: "Alegreya Sans", sans-serif;
     font-size: 40px;
     font-weight: bold;
     letter-spacing: 0.8px;

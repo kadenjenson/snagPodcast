@@ -5,29 +5,6 @@
 @import "imports.css";
 
 @layer base {
-    @font-face {
-        font-family: "Alegreya Sans", sans-serif;
-        src: url(../fonts/Alegreya_Sans/AlegreyaSans-LightItalic.ttf) format("truetype"),
-        url(../fonts/Alegreya_Sans/AlegreyaSans-Light.ttf) format("truetype"),
-        url(../fonts/Alegreya_Sans/AlegreyaSans-Regular.ttf) format("truetype"),
-        url(../fonts/Alegreya_Sans/AlegreyaSans-Italic.ttf) format("truetype"),
-        url(../fonts/Alegreya_Sans/AlegreyaSans-Medium.ttf) format("truetype"),
-        url(../fonts/Alegreya_Sans/AlegreyaSans-MediumItalic.ttf) format("truetype"),
-        url(../fonts/Alegreya_Sans/AlegreyaSans-Bold.ttf) format("truetype"),
-        url(../fonts/Alegreya_Sans/AlegreyaSans-ExtraBold.ttf) format("truetype");
-    }
-
-    @font-face {
-        font-family: "Muli", sans-serif;
-        src: url(../fonts/Muli/Muli-Light.ttf) format("truetype"),
-        url(../fonts/Muli/Muli-LightItalic.ttf) format("truetype"),
-        url(../fonts/Muli/Muli-Regular.ttf) format("truetype"),
-        url(../fonts/Muli/Muli-Italic.ttf) format("truetype"),
-        url(../fonts/Muli/Muli-SemiBold.ttf) format("truetype"),
-        url(../fonts/Muli/Muli-SemiBoldItalic.ttf) format("truetype"),
-        url(../fonts/Muli/Muli-Bold.ttf) format("truetype");
-    }
-
     *,
     ::before,
     ::after {
