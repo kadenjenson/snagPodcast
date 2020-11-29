@@ -1,16 +1,22 @@
 module.exports = {
-    purge: [],
+    purge: [
+        './resources/**/*.blade.php',
+        './resources/**/*.js',
+        './resources/**/*.vue',
+    ],
     theme: {
         container: {
-            center: true
+            center: true,
         },
         extend: {
             colors: {
                 babyBlue: "#51c8ff",
-                snagPink: "#fc52a3"
+                snagPink: "#fc52a3",
             }
         }
     },
-    variants: {},
+    variants: {
+        extend: {},
+    },
     plugins: [],
 }

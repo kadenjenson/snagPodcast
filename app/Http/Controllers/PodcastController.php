@@ -95,8 +95,7 @@ class PodcastController extends Controller
         }
         else
         {
-            $latestEpisodes = $this->cleanEpisodes($episodes);
-            Cache::put('latestEpisodes', $latestEpisodes);
+            Cache::put('latestEpisodes', $this->cleanEpisodes($episodes));
         }
         return $episodes;
     }

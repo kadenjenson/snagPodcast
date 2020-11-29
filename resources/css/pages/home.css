@@ -28,17 +28,3 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-.home.page .episode .title span {
-    color: #98A7B9;
-    font-size: 42px;
-    font-weight: 800;
-    opacity: 0.75;
-}
-.home.page .episode .title span i {
-    font-size: 43px;
-    font-weight: 800;
-}
-.home.page .episode .episode-info .title a {
-    font-weight: 700;
-    text-decoration: none;
-}
