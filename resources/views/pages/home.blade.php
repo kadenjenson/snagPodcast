@@ -6,10 +6,8 @@
     
     @php ($episode = $episodes[array_key_first($episodes)])
 
-    <div class="header-container">
-        <div class="title">
-            <h1>{{ $episode->title }}</h1>
-        </div>
+    <div class="title">
+        <h1>{{ $episode->title }}</h1>
     </div>
     
 @endsection

@@ -22,9 +22,13 @@
                 @include('includes.navbar')
             </header>
 
-            <section class="container h-full @yield('page-class', '')">
-                @yield('page-header')
-                @yield('page-content')
+            <section class="content-wrapper h-full w-full @yield('page-class', '')">
+                <div class="page-header w-full">
+                    @yield('page-header')
+                </div>
+                <div class="container h-full">
+                    @yield('page-content')
+                </div>
             </section>
 
             <footer class="footer-wrapper w-full p-8 bg-white border-purple-500 border-t-4">

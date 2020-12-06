@@ -6,33 +6,21 @@
 
 .content-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  align-self: center;
-  justify-content: center;
-  padding: 0 50px;
+  flex-direction: column;
 }
 
-.header-container {
+.page-header {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 420px;
-  width: 100%;
 }
 
-.header-container .title {
-  padding: 6px 0;
-  font-size: 40px;
-  font-weight: bold;
-  letter-spacing: 0.8px;
+.page-header .container {
+  z-index: 1;
 }
 
-.header-container .subtitle {
-  margin-left: 8px;
-  font-size: 16px;
-}
-
-.header-container .overlay {
+.page-header .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -207,8 +195,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.about.page .header-container {
+.about.page .page-header {
   background-image: url(/images/about-banner.jpeg?58d57871d9996812e7ebf1f9bb66dde0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .contact.page .contact-form {
   width: 88%;
