@@ -17,7 +17,7 @@
 }
 
 .page-header .container {
-  z-index: 1;
+  z-index: 5;
 }
 
 .page-header .overlay {
@@ -26,7 +26,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(52, 153, 235, 0.7);
+  background-color: rgba(58, 88, 230, 0.8);
 }
 
 .card {
@@ -60,6 +60,11 @@
   text-align: right;
 }
 .nav-wrapper {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
   background-image: url(/images/snagPodcast-banner.jpg?d7f9f0aad3de7b6c3f8abffc34b62259);
   background-position: center;
   background-repeat: no-repeat;
@@ -86,7 +91,7 @@
   transition: all 200ms ease;
 }
 
-.nav-row .nav-link:not(.logo):hover::after,
+.nav-row .nav-link:hover::after,
 .nav-row .nav-link.active::after {
   width: 100%;
   background-color: #fc52a3;
@@ -101,35 +106,25 @@
 
 /* NAV LOGO STYLES */
 
-.nav-link.logo {
-  align-self: flex-start;
-  z-index: 1;
+.nav-wrapper .logo-container {
+  position: absolute;
+  top: 30%;
   height: 160px;
   width: 160px;
-  margin-top: 20px;
-  padding: 0;
-}
-
-.nav-link .logo-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 100%;
-  width: 100%;
-  transition: all 200ms ease;
   box-shadow: 0 0 20px -8px black;
+  z-index: 1;
 }
 
-.nav-link .logo-container img {
+.nav-wrapper .logo-container img {
+  position: relative;
   height: 100%;
   width: 100%;
-  transition: 100ms all ease;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
+  transition: 100ms all ease;
 }
 
-.nav-link .logo-container:hover {
+.nav-wrapper .logo-container:hover img {
   height: 101%;
   width: 101%;
 }
@@ -823,10 +818,40 @@ video {
   color: #2D3748;
 }
 
+h1 {
+  border-bottom-width: 4px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 a {
+  height: auto;
   --tw-text-opacity: 1;
   color: rgba(81, 200, 255, var(--tw-text-opacity));
   text-decoration: none;
+  width: auto;
 }
 
 button {

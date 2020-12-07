@@ -1,4 +1,9 @@
 .nav-wrapper {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
     background-image: url(../../images/snagPodcast-banner.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -22,7 +27,7 @@
     background-color: theme('colors.white');
     transition: all 200ms ease;
 }
-.nav-row .nav-link:not(.logo):hover::after,
+.nav-row .nav-link:hover::after,
 .nav-row .nav-link.active::after {
     width: 100%;
     background-color: theme('colors.snagPink');
@@ -35,32 +40,23 @@
 }
 
 /* NAV LOGO STYLES */
-.nav-link.logo {
-    align-self: flex-start;
-    z-index: 1;
+.nav-wrapper .logo-container {
+    position: absolute;
+    top: 30%;
     height: 160px;
     width: 160px;
-    margin-top: 20px;
-    padding: 0;
-}
-.nav-link .logo-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-    width: 100%;
-    transition: all 200ms ease;
     box-shadow: 0 0 20px -8px black;
+    z-index: 1;
 }
-.nav-link .logo-container img {
+.nav-wrapper .logo-container img {
+    position: relative;
     height: 100%;
     width: 100%;
-    transition: 100ms all ease;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
+    transition: 100ms all ease;
 }
-.nav-link .logo-container:hover {
+.nav-wrapper .logo-container:hover img {
     height: 101%;
     width: 101%;
 }

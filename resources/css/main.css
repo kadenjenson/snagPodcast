@@ -16,7 +16,7 @@
     height: 420px;
 }
 .page-header .container {
-    z-index: 1;
+    z-index: 5;
 }
 .page-header .overlay {
     position: absolute;
@@ -24,7 +24,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(52, 153, 235, 0.7);
+    background-color: rgba(58, 88, 230, 0.8);
 }
 
 .card {

@@ -18,15 +18,15 @@
     <body class="h-full min-h-screen w-full min-w-screen bg-gray-200">
         <div class="main-app-container h-full min-h-screen">
 
-            <header class="nav-wrapper h-24 w-full px-8 bg-white shadow">
+            <nav class="nav-wrapper shadow-lg">
                 @include('includes.navbar')
-            </header>
+            </nav>
 
             <section class="content-wrapper h-full w-full @yield('page-class', '')">
-                <div class="page-header w-full">
+                <header class="page-header w-full">
                     @yield('page-header')
-                </div>
-                <div class="container h-full">
+                </header>
+                <div class="container h-full w-full">
                     @yield('page-content')
                 </div>
             </section>
